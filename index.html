@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Presence Proposal — Ruchika Tekkeveetil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#080F1A;
+  --navy2:#0D1825;
+  --navy3:#14243A;
+  --navy4:#1A2E45;
+  --gold:#B8963E;
+  --gold2:#D4A843;
+  --gold3:#E8C97A;
+  --gold4:#F0D99A;
+  --cream:#F5F0E8;
+  --cream2:#EDE7D9;
+  --white:#FDFCFA;
+  --slate:#5A6472;
+  --mist:#8E9BAA;
+  --mist2:#6B7A8A;
+  --green:#1A6B3C;
+  --green2:#2E7D52;
+  --danger:#C0392B;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'Outfit',-apple-system,sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--navy);
+  color:var(--cream);
+  font-family:var(--fb);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── PROGRESS BAR ── */
+.progress-bar{
+  position:fixed;top:0;left:0;
+  height:2px;
+  background:linear-gradient(to right,var(--gold),var(--gold3),var(--gold2));
+  z-index:1000;
+  transform-origin:left;
+  transform:scaleX(0);
+  transition:transform 0.08s linear;
+  pointer-events:none;
+}
+
+/* ── GRAIN OVERLAY ── */
+.grain{
+  position:fixed;inset:0;z-index:998;
+  opacity:0.03;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size:200px;
+  animation:grainShift 0.4s steps(1) infinite;
+}
+@keyframes grainShift{
+  0%{transform:translate(0,0);}20%{transform:translate(-3px,2px);}
+  40%{transform:translate(2px,-3px);}60%{transform:translate(-2px,2px);}
+  80%{transform:translate(3px,-1px);}100%{transform:translate(0,0);}
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+#heroCanvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  z-index:0;
+}
+.hero-vignette{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(to bottom, rgba(8,15,26,0.15) 0%, rgba(8,15,26,0) 30%, rgba(8,15,26,0.5) 100%),
+    radial-gradient(ellipse 70% 60% at 90% 10%, rgba(8,15,26,0.2) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{
+  flex:1;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:7rem 6rem 4rem;
+  max-width:1180px;margin:0 auto;width:100%;
+  position:relative;z-index:2;
+}
+
+.hero-eyebrow{
+  font-size:0.57rem;
+  letter-spacing:0.55em;text-transform:uppercase;
+  color:var(--gold2);font-weight:500;
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:2rem;opacity:0;transform:translateY(12px);
+}
+.hero-eyebrow::before{
+  content:'';width:32px;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold2));
+}
+
+.hero-title{
+  font-family:var(--fd);
+  font-size:clamp(3.2rem,6.5vw,6.2rem);
+  font-weight:300;color:var(--white);
+  line-height:1.0;letter-spacing:-0.025em;
+  overflow:hidden;
+}
+.hero-title em{
+  font-style:italic;color:var(--gold2);
+  display:block;
+}
+.t-wrap{overflow:hidden;display:block;}
+.t-inner{display:block;transform:translateY(105%);}
+
+.hero-sub{
+  font-size:0.97rem;color:var(--mist);
+  font-weight:300;max-width:480px;
+  line-height:1.9;margin-top:2rem;
+  opacity:0;transform:translateY(12px);
+}
+.hero-rule{
+  width:0;height:1px;
+  background:linear-gradient(to right,var(--gold),transparent);
+  margin:2.5rem 0;
+}
+.hero-meta{
+  display:flex;gap:3.5rem;flex-wrap:wrap;
+  opacity:0;transform:translateY(12px);
+}
+.meta-block{}
+.meta-tag{
+  font-size:0.54rem;letter-spacing:0.4em;
+  text-transform:uppercase;color:var(--gold);
+  font-weight:600;margin-bottom:0.25rem;
+}
+.meta-val{
+  font-family:var(--fd);font-size:1.05rem;
+  color:var(--white);font-weight:400;
+}
+.hero-footer{
+  border-top:1px solid rgba(184,150,62,0.1);
+  padding:1.75rem 6rem;
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  opacity:0;transform:translateY(12px);
+  background:rgba(8,15,26,0.4);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.hero-footer-logo{font-family:var(--fd);font-size:1.1rem;color:var(--cream);}
+.hero-footer-logo em{font-style:italic;color:var(--gold2);}
+.hero-footer-right{font-size:0.58rem;color:var(--mist2);letter-spacing:0.15em;text-transform:uppercase;}
+
+/* ── MARQUEE ── */
+.marquee-strip{
+  background:var(--gold2);
+  padding:0.9rem 0;overflow:hidden;
+  position:relative;z-index:2;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.marquee-track{
+  display:flex;white-space:nowrap;
+  animation:marqueeScroll 22s linear infinite;
+  width:max-content;will-change:transform;
+}
+.marquee-track span{
+  font-size:0.57rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--navy);font-weight:600;
+  padding:0 2.25rem;
+  display:flex;align-items:center;gap:0.65rem;
+}
+.marquee-track span::after{content:'◆';opacity:0.3;font-size:0.38rem;}
+@keyframes marqueeScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── SHARED SECTION STYLES ── */
+.section-wrap{max-width:1180px;margin:0 auto;padding:0 6rem;}
+.s-eyebrow{
+  font-size:0.54rem;letter-spacing:0.52em;text-transform:uppercase;
+  color:var(--gold2);font-weight:600;
+  margin-bottom:0.7rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.s-eyebrow::after{content:'';width:22px;height:1px;background:var(--gold2);}
+.s-h{
+  font-family:var(--fd);
+  font-size:clamp(2rem,3.8vw,3.2rem);
+  font-weight:300;color:var(--white);
+  line-height:1.07;margin-bottom:1rem;
+}
+.s-h em{font-style:italic;color:var(--gold2);}
+.s-lead{font-size:0.9rem;color:var(--mist);line-height:1.9;max-width:540px;}
+
+/* ── SITUATION SECTION ── */
+.situation-section{background:var(--navy);padding:8rem 0 0;}
+.situation-section::after{
+  content:'';display:block;
+  height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,150,62,0.15),transparent);
+}
+
+/* Journey Timeline */
+.journey-flow{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  position:relative;
+  margin-top:3rem;
+  margin-bottom:6rem;
+}
+.journey-flow::before{
+  content:'';position:absolute;
+  top:26px;left:calc(10% + 8px);right:calc(10% + 8px);
+  height:1px;
+  background:linear-gradient(to right,
+    rgba(184,150,62,0.5) 0%,rgba(184,150,62,0.5) 38%,
+    rgba(192,57,43,0.15) 38%,rgba(192,57,43,0.5) 42%,
+    rgba(192,57,43,0.5) 100%
+  );
+  z-index:0;
+}
+.j-step{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:0 1rem 2rem;
+  position:relative;z-index:1;
+}
+.j-node{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;
+  margin-bottom:1.25rem;flex-shrink:0;
+  position:relative;
+}
+.j-node-good{
+  background:rgba(184,150,62,0.1);
+  border:1px solid rgba(184,150,62,0.4);
+  box-shadow:0 0 0 5px var(--navy),0 0 0 6px rgba(184,150,62,0.1);
+}
+.j-node-bad{
+  background:rgba(192,57,43,0.1);
+  border:1px solid rgba(192,57,43,0.45);
+  box-shadow:0 0 0 5px var(--navy),0 0 0 6px rgba(192,57,43,0.12);
+}
+.j-node-bad::after{
+  content:'';position:absolute;inset:-8px;border-radius:50%;
+  border:1px solid rgba(192,57,43,0.15);
+  animation:pulseRing 2.2s ease-in-out infinite;
+}
+@keyframes pulseRing{0%,100%{transform:scale(1);opacity:1;}60%{transform:scale(1.2);opacity:0;}}
+.j-step-label{font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;font-weight:600;margin-bottom:0.35rem;}
+.j-label-good{color:var(--gold2);}
+.j-label-bad{color:#EF9A9A;}
+.j-step-title{font-family:var(--fd);font-size:1rem;font-weight:500;color:var(--white);margin-bottom:0.4rem;}
+.j-step-title.bad{color:#FFCDD2;}
+.j-step-desc{font-size:0.71rem;color:var(--mist);line-height:1.55;}
+
+/* Situation Tiles */
+.sit-section{background:var(--navy2);padding:0 0 0;}
+.sit-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.5px;background:rgba(255,255,255,0.035);
+}
+.sit-card{
+  background:var(--navy);
+  padding:3.25rem 2.75rem;
+  position:relative;overflow:hidden;
+  transition:background 0.4s ease;cursor:default;
+}
+.sit-card:hover{background:rgba(13,24,37,1);}
+.sit-card-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle 280px at var(--mx,50%) var(--my,50%),rgba(184,150,62,0.07),transparent 68%);
+  opacity:0;transition:opacity 0.4s;
+}
+.sit-card:hover .sit-card-glow{opacity:1;}
+.sit-card-danger{background:rgba(160,30,20,0.04)!important;}
+.sit-card-danger:hover{background:rgba(160,30,20,0.07)!important;}
+.sit-card-danger .sit-card-glow{
+  background:radial-gradient(circle 280px at var(--mx,50%) var(--my,50%),rgba(192,57,43,0.08),transparent 68%);
+}
+.sit-card-num{
+  position:absolute;top:1.5rem;right:2rem;
+  font-family:var(--fd);font-size:6rem;font-weight:300;
+  color:rgba(255,255,255,0.025);line-height:1;pointer-events:none;
+}
+.sit-card-inner{position:relative;z-index:1;}
+.sit-card-icon{font-size:2rem;margin-bottom:1.25rem;display:block;}
+.sit-card-title{
+  font-family:var(--fd);font-size:1.4rem;font-weight:500;
+  color:var(--white);margin-bottom:0.65rem;line-height:1.2;
+}
+.sit-card-danger .sit-card-title{color:#FFCDD2;}
+.sit-card-body{font-size:0.83rem;color:var(--mist);line-height:1.82;}
+
+/* Left border accent that grows on hover */
+.sit-card::before{
+  content:'';position:absolute;
+  left:0;top:50%;bottom:50%;width:2px;
+  background:var(--gold);
+  transition:top 0.4s var(--ease-out),bottom 0.4s var(--ease-out);
+}
+.sit-card:hover::before{top:0;bottom:0;}
+.sit-card-danger::before{background:var(--danger);}
+
+/* ── SOLUTION ── */
+.solution-section{
+  background:var(--navy);
+  padding:8rem 0;
+  position:relative;
+}
+.solution-section::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,150,62,0.2),transparent);
+}
+.fix-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5px;background:rgba(255,255,255,0.04);
+  margin-top:3rem;min-height:390px;
+}
+.fix-card{
+  background:var(--navy2);padding:2.75rem 2rem;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:flex 0.55s var(--ease-out),background 0.3s;
+  cursor:default;
+  border-top:2px solid rgba(255,255,255,0.05);
+}
+.fix-card:hover{flex:2.2;background:var(--navy3);border-top-color:var(--card-color,var(--gold));}
+.fix-card-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 100% 80% at 10% 90%,rgba(184,150,62,0.06) 0%,transparent 55%);
+  opacity:0;transition:opacity 0.5s;
+}
+.fix-card:hover .fix-card-bg{opacity:1;}
+.fix-card > *{position:relative;z-index:1;}
+.fix-num{
+  font-family:var(--fd);font-size:3.2rem;font-weight:300;
+  color:rgba(255,255,255,0.045);line-height:1;margin-bottom:0.5rem;
+}
+.fix-icon{font-size:1.8rem;margin-bottom:1rem;display:block;}
+.fix-title{
+  font-family:var(--fd);font-size:1.12rem;font-weight:500;
+  color:var(--white);margin-bottom:0.35rem;line-height:1.3;
+}
+.fix-subtitle{
+  font-size:0.66rem;letter-spacing:0.06em;color:var(--gold2);
+  margin-bottom:0.7rem;font-style:italic;font-family:var(--fd);
+  opacity:0;transition:opacity 0.3s 0.1s;
+}
+.fix-card:hover .fix-subtitle{opacity:1;}
+.fix-body{
+  font-size:0.78rem;color:var(--mist);line-height:1.75;
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height 0.55s var(--ease-out),opacity 0.3s 0.1s;
+}
+.fix-card:hover .fix-body{max-height:200px;opacity:1;}
+
+/* ── REC STRIP ── */
+.rec-strip{
+  background:linear-gradient(135deg,#B8963E 0%,#D4A843 60%,#C8A040 100%);
+  padding:2.5rem 0;position:relative;overflow:hidden;
+}
+.rec-strip::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    -45deg,transparent,transparent 8px,
+    rgba(0,0,0,0.025) 8px,rgba(0,0,0,0.025) 9px
+  );pointer-events:none;
+}
+.rec-inner{
+  max-width:1180px;margin:0 auto;padding:0 6rem;
+  display:flex;align-items:center;gap:2rem;
+  position:relative;z-index:1;
+}
+.rec-icon{font-size:1.75rem;flex-shrink:0;}
+.rec-text{font-size:0.9rem;color:var(--navy);line-height:1.75;flex:1;}
+.rec-text strong{font-weight:600;}
+.rec-badge{
+  background:var(--navy);color:var(--gold2);
+  font-size:0.53rem;letter-spacing:0.3em;text-transform:uppercase;
+  font-weight:700;padding:0.65rem 1.3rem;
+  white-space:nowrap;flex-shrink:0;
+  border:1px solid rgba(184,150,62,0.3);
+}
+
+/* ── PRICING ── */
+.pricing-section{
+  background:var(--navy);
+  padding:8rem 0;position:relative;
+}
+.pricing-section::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,150,62,0.2),transparent);
+}
+.price-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.5px;background:rgba(255,255,255,0.045);
+  margin-bottom:4rem;
+}
+.price-card{
+  background:var(--navy2);padding:3rem 2.5rem;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform 0.3s var(--ease-out),box-shadow 0.3s;
+}
+.price-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+.price-card.featured{
+  background:var(--navy3);
+  transform:translateY(-10px);
+  box-shadow:0 32px 80px rgba(0,0,0,0.5);
+}
+.price-card.featured:hover{transform:translateY(-15px);}
+.price-card-glow{
+  position:absolute;inset:-1px;pointer-events:none;z-index:0;
+  background:radial-gradient(circle 300px at var(--mx,50%) var(--my,50%),rgba(184,150,62,0.09),transparent 68%);
+  opacity:0;transition:opacity 0.4s;
+}
+.price-card:hover .price-card-glow{opacity:1;}
+.price-card > *:not(.price-card-glow){position:relative;z-index:1;}
+.price-top{height:3px;margin:-3rem -2.5rem 2.75rem;}
+.price-top.t-green{background:var(--green2);}
+.price-top.t-gold{background:linear-gradient(to right,var(--gold),var(--gold3),var(--gold2));}
+.price-top.t-dim{background:rgba(184,150,62,0.25);}
+.price-badge{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  font-size:0.52rem;letter-spacing:0.28em;text-transform:uppercase;font-weight:700;
+  padding:0.35rem 0.9rem;margin-bottom:1.5rem;align-self:flex-start;
+}
+.badge-green{background:var(--green2);color:var(--white);}
+.badge-gold{background:var(--gold);color:var(--navy);}
+.badge-dim{background:rgba(255,255,255,0.07);color:var(--mist);}
+.price-tier{font-size:0.57rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:0.35rem;}
+.price-name{font-family:var(--fd);font-size:1.5rem;font-weight:500;color:var(--white);margin-bottom:0.65rem;}
+.price-amount{display:flex;align-items:flex-end;gap:0.2rem;margin-bottom:0.2rem;}
+.price-dollar{font-family:var(--fd);font-size:1.5rem;color:var(--gold2);padding-bottom:0.45rem;}
+.price-num{font-family:var(--fd);font-size:3.8rem;font-weight:300;color:var(--gold2);line-height:1;}
+.price-period{font-size:0.73rem;color:var(--mist);padding-bottom:0.48rem;margin-left:0.2rem;}
+.price-rule{height:1px;background:rgba(255,255,255,0.07);margin:1.5rem 0;}
+.price-desc{font-size:0.81rem;color:var(--mist);line-height:1.82;margin-bottom:1.5rem;}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:0.82rem;flex:1;}
+.price-item{display:flex;gap:0.8rem;align-items:flex-start;font-size:0.8rem;color:var(--mist);line-height:1.6;}
+.p-check{color:var(--green2);font-size:0.9rem;flex-shrink:0;margin-top:0.05rem;font-weight:600;}
+.price-cta{
+  display:block;text-align:center;
+  font-size:0.63rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:500;
+  padding:1.05rem;margin-top:2rem;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background 0.25s,transform 0.2s,box-shadow 0.25s;
+  font-family:var(--fb);
+  position:relative;overflow:hidden;
+}
+.price-cta::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,0);
+  transition:background 0.2s;
+}
+.price-cta:hover::after{background:rgba(255,255,255,0.06);}
+.cta-gold{background:var(--gold);color:var(--navy);}
+.cta-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,150,62,0.35);}
+.cta-outline{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.13);}
+.cta-outline:hover{background:rgba(255,255,255,0.04);}
+
+.addon-header{margin:0 0 2.5rem;}
+.stacking-note{
+  margin-top:2rem;padding:1.75rem 2rem;
+  background:rgba(184,150,62,0.055);
+  border-left:3px solid var(--gold);
+  display:flex;gap:1rem;align-items:flex-start;
+}
+.stacking-note p{font-size:0.82rem;color:var(--mist);line-height:1.85;}
+.stacking-note strong{color:var(--gold2);}
+
+/* ── COMPARISON TABLE ── */
+.table-section{background:var(--navy2);padding:7rem 0;}
+.comp-table{margin-top:2.75rem;border:1px solid rgba(255,255,255,0.055);}
+.comp-row{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.comp-row:last-child{border-bottom:none;}
+.comp-cell{padding:1.05rem 1.5rem;font-size:0.8rem;color:var(--mist);display:flex;align-items:center;}
+.comp-cell.feat{color:var(--cream);font-weight:500;}
+.comp-cell.head{font-size:0.54rem;letter-spacing:0.24em;text-transform:uppercase;font-weight:600;color:var(--mist);padding:1.3rem 1.5rem;}
+.comp-cell.head.gold{color:var(--gold2);}
+.comp-cell.hi{background:rgba(184,150,62,0.04);}
+.comp-row.alt .comp-cell{background:rgba(0,0,0,0.07);}
+.comp-row.alt .comp-cell.hi{background:rgba(184,150,62,0.06);}
+.chk{color:var(--green2);font-size:1rem;font-weight:600;}
+.dsh{color:rgba(255,255,255,0.1);}
+
+/* ── NEXT STEPS ── */
+.steps-section{background:var(--navy);padding:8rem 0;}
+.steps-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5px;background:rgba(255,255,255,0.04);margin-top:3rem;
+}
+.step-card{
+  background:var(--navy2);padding:2.75rem 2rem;
+  position:relative;overflow:hidden;
+  transition:background 0.3s;cursor:default;
+}
+.step-card:hover{background:var(--navy3);}
+.step-card-glow{
+  position:absolute;inset:-1px;pointer-events:none;z-index:0;
+  background:radial-gradient(circle 200px at var(--mx,50%) var(--my,50%),rgba(184,150,62,0.08),transparent 68%);
+  opacity:0;transition:opacity 0.35s;
+}
+.step-card:hover .step-card-glow{opacity:1;}
+.step-card > *:not(.step-card-glow){position:relative;z-index:1;}
+.step-num{
+  font-family:var(--fd);font-size:4.2rem;font-weight:300;
+  color:rgba(255,255,255,0.04);line-height:1;margin-bottom:0.75rem;
+}
+.step-accent{width:18px;height:2px;background:var(--gold);margin-bottom:1.25rem;}
+.step-card h4{font-family:var(--fd);font-size:1.1rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;}
+.step-card p{font-size:0.78rem;color:var(--mist);line-height:1.75;}
+
+/* ── SIGNOFF ── */
+.signoff{
+  background:var(--navy2);padding:7rem 0;
+  position:relative;overflow:hidden;
+}
+.signoff::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 100% at 85% 50%,rgba(184,150,62,0.055) 0%,transparent 60%);
+  pointer-events:none;
+}
+.signoff-inner{
+  max-width:1180px;margin:0 auto;padding:0 6rem;
+  display:grid;grid-template-columns:1fr auto;gap:4rem;
+  align-items:center;position:relative;z-index:1;
+}
+.signoff-quote{
+  font-family:var(--fd);
+  font-size:clamp(1.4rem,2.6vw,2.1rem);
+  font-weight:300;font-style:italic;
+  color:var(--cream);line-height:1.42;
+  margin-bottom:2rem;position:relative;
+}
+.signoff-quote::before{
+  content:'\201C';
+  font-size:7rem;color:rgba(184,150,62,0.09);
+  position:absolute;top:-2rem;left:-1.5rem;
+  font-family:var(--fd);line-height:1;
+  pointer-events:none;
+}
+.signoff-from{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.signoff-contact{text-align:right;}
+.signoff-name{font-family:var(--fd);font-size:1.35rem;font-weight:400;color:var(--white);margin-bottom:1rem;}
+.signoff-contact a{display:block;font-size:0.83rem;color:var(--mist);text-decoration:none;line-height:2.2;transition:color 0.2s;}
+.signoff-contact a:hover{color:var(--gold2);}
+
+/* ── FOOTER ── */
+.page-footer{
+  background:#040C16;padding:1.75rem 6rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(184,150,62,0.08);
+}
+.footer-logo{font-family:var(--fd);font-size:0.95rem;color:var(--cream);}
+.footer-logo em{font-style:italic;color:var(--gold2);}
+.footer-txt{font-size:0.57rem;color:var(--mist2);letter-spacing:0.09em;text-transform:uppercase;}
+
+/* ── SCROLL REVEAL STATE ── */
+.gsap-fade{opacity:0;transform:translateY(26px);}
+.gsap-left{opacity:0;transform:translateX(-26px);}
+.gsap-scale{opacity:0;transform:scale(0.97);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner,.section-wrap,.rec-inner,.signoff-inner,.page-footer{padding-left:2rem;padding-right:2rem;}
+  .hero-footer{padding:1.5rem 2rem;}
+  .sit-grid,.price-grid,.steps-grid,.fix-grid{grid-template-columns:1fr;}
+  .signoff-inner{grid-template-columns:1fr;}
+  .signoff-contact{text-align:left;}
+  .journey-flow{grid-template-columns:1fr 1fr;gap:1rem;}
+  .journey-flow::before{display:none;}
+  .price-card.featured{transform:none;}
+  .comp-row{grid-template-columns:1fr 1fr 1fr;}
+  .comp-cell:nth-child(n+4){display:none;}
+}
+@media(max-width:600px){
+  .hero-title{font-size:2.75rem;}
+  .s-h{font-size:1.8rem;}
+  .journey-flow{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow" id="heroEyebrow">Online Presence Proposal</p>
+
+    <h1 class="hero-title">
+      <span class="t-wrap"><span class="t-inner" id="titleA">Built for</span></span>
+      <em class="t-wrap"><span class="t-inner" id="titleB">Ruchika Tekkeveetil</span></em>
+    </h1>
+
+    <p class="hero-sub" id="heroSub">A strategic recommendation for establishing your online presence — so when clients look you up, what they find matches who you actually are.</p>
+
+    <div class="hero-rule" id="heroRule"></div>
+
+    <div class="hero-meta" id="heroMeta">
+      <div class="meta-block"><p class="meta-tag">Prepared for</p><p class="meta-val">Ruchika Tekkeveetil</p></div>
+      <div class="meta-block"><p class="meta-tag">Prepared by</p><p class="meta-val">Suhaas Venkatesh</p></div>
+      <div class="meta-block"><p class="meta-tag">Date</p><p class="meta-val">April 2026</p></div>
+      <div class="meta-block"><p class="meta-tag">Valid for</p><p class="meta-val">30 Days</p></div>
+    </div>
+  </div>
+
+  <div class="hero-footer" id="heroFooter">
+    <span class="hero-footer-logo"><em>Ruchika</em> Tekkeveetil</span>
+    <span class="hero-footer-right">Confidential · For Discussion Purposes Only</span>
+  </div>
+</section>
+
+<!-- ══════════════════ MARQUEE ══════════════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Website</span><span>Google Business Profile</span><span>Local SEO</span>
+    <span>Domain Setup</span><span>Monthly Blogging</span><span>Get Found Online</span>
+    <span>BC Business Advisory</span><span>Ruchika Tekkeveetil</span>
+    <span>Website</span><span>Google Business Profile</span><span>Local SEO</span>
+    <span>Domain Setup</span><span>Monthly Blogging</span><span>Get Found Online</span>
+    <span>BC Business Advisory</span><span>Ruchika Tekkeveetil</span>
+  </div>
+</div>
+
+<!-- ══════════════════ THE SITUATION ══════════════════ -->
+<section class="situation-section">
+  <div class="section-wrap">
+
+    <div class="gsap-fade">
+      <p class="s-eyebrow">01 — The Situation</p>
+      <h2 class="s-h">Where Things Stand<br><em>Right Now</em></h2>
+      <p class="s-lead">You're making the calls. You're having the conversations. You're doing everything right. But the second they hang up and Google your name — you disappear. And they move on.</p>
+    </div>
+
+    <div class="journey-flow" id="journeyFlow">
+      <div class="j-step gsap-fade">
+        <div class="j-node j-node-good">📞</div>
+        <p class="j-step-label j-label-good">Step 1</p>
+        <h4 class="j-step-title">Great call</h4>
+        <p class="j-step-desc">They're interested. You've done the hard work.</p>
+      </div>
+      <div class="j-step gsap-fade">
+        <div class="j-node j-node-good">🔍</div>
+        <p class="j-step-label j-label-good">Step 2</p>
+        <h4 class="j-step-title">They Google you</h4>
+        <p class="j-step-desc">Every single prospect does this. It's automatic.</p>
+      </div>
+      <div class="j-step gsap-fade">
+        <div class="j-node j-node-bad">❓</div>
+        <p class="j-step-label j-label-bad">⚠ Break Point</p>
+        <h4 class="j-step-title bad">Nothing found</h4>
+        <p class="j-step-desc">No website. No GMB. No validation.</p>
+      </div>
+      <div class="j-step gsap-fade">
+        <div class="j-node j-node-bad">😬</div>
+        <p class="j-step-label j-label-bad">Consequence</p>
+        <h4 class="j-step-title bad">Doubt creeps in</h4>
+        <p class="j-step-desc">"Is she still active?"</p>
+      </div>
+      <div class="j-step gsap-fade">
+        <div class="j-node j-node-bad">🚶</div>
+        <p class="j-step-label j-label-bad">Result</p>
+        <h4 class="j-step-title bad">Lost deal</h4>
+        <p class="j-step-desc">They move on. You never know.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sit-section">
+  <div class="sit-grid" id="sitGrid">
+    <div class="sit-card gsap-fade">
+      <div class="sit-card-num">01</div>
+      <div class="sit-card-glow"></div>
+      <div class="sit-card-inner">
+        <span class="sit-card-icon">🔍</span>
+        <h3 class="sit-card-title">You don't exist online</h3>
+        <p class="sit-card-body">Google "Ruchika Tekkeveetil." Google "business broker Burnaby." Nothing comes back. You've spent years building real expertise — and the internet acts like you don't exist. That's the gap we're closing.</p>
+      </div>
+    </div>
+    <div class="sit-card gsap-fade">
+      <div class="sit-card-num">02</div>
+      <div class="sit-card-glow"></div>
+      <div class="sit-card-inner">
+        <span class="sit-card-icon">📵</span>
+        <h3 class="sit-card-title">You're losing deals you already won</h3>
+        <p class="sit-card-body">Think about the last 10 people you spoke to. At least half Googled you after. They found nothing. Some moved on. You'll never know which ones — and that's the worst part.</p>
+      </div>
+    </div>
+    <div class="sit-card gsap-fade">
+      <div class="sit-card-num">03</div>
+      <div class="sit-card-glow"></div>
+      <div class="sit-card-inner">
+        <span class="sit-card-icon">🏠</span>
+        <h3 class="sit-card-title">ProBX.ca isn't yours</h3>
+        <p class="sit-card-body">Michael's site tells Michael's story. You need something that tells yours — your background, your approach, why someone should trust you with the biggest transaction of their business life.</p>
+      </div>
+    </div>
+    <div class="sit-card sit-card-danger gsap-fade">
+      <div class="sit-card-num">04</div>
+      <div class="sit-card-glow"></div>
+      <div class="sit-card-inner">
+        <span class="sit-card-icon">⚠️</span>
+        <h3 class="sit-card-title">$700 for a map pin. Seriously.</h3>
+        <p class="sit-card-body">Someone quoted you $700 just to stick your name on Google Maps. No website behind it. Someone clicks your listing — where do they go? Nowhere. That's not a solution. That's highway robbery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ THE FIX ══════════════════ -->
+<section class="solution-section">
+  <div class="section-wrap">
+    <div class="gsap-fade">
+      <p class="s-eyebrow">02 — The Fix</p>
+      <h2 class="s-h">What the Right Setup<br><em>Looks Like</em></h2>
+      <p class="s-lead">Four building blocks. Each one closes a gap. Together they create a complete online presence that works while you're out making calls.</p>
+    </div>
+
+    <div class="fix-grid gsap-scale" id="fixGrid">
+      <div class="fix-card" style="--card-color:#B8963E;">
+        <div class="fix-card-bg"></div>
+        <div class="fix-num">01</div>
+        <span class="fix-icon">🌐</span>
+        <h3 class="fix-title">A website that works while you sleep</h3>
+        <p class="fix-subtitle">Not ProBX. Not realtor.ca. Yours.</p>
+        <p class="fix-body">Every prospect Googles you. This is what they find — your story, your credibility, your contact. It answers "can I trust this person?" before you even pick up the phone.</p>
+      </div>
+      <div class="fix-card" style="--card-color:#D4A843;">
+        <div class="fix-card-bg"></div>
+        <div class="fix-num">02</div>
+        <span class="fix-icon">📍</span>
+        <h3 class="fix-title">Show up when they're already looking</h3>
+        <p class="fix-subtitle">Google Maps. Google Search. Both.</p>
+        <p class="fix-body">Someone types "business broker Burnaby" — you appear. With your face, your number, your reviews, and a link to your site. That's not marketing. That's free inbound, every single day.</p>
+      </div>
+      <div class="fix-card" style="--card-color:#2E7D52;">
+        <div class="fix-card-bg"></div>
+        <div class="fix-num">03</div>
+        <span class="fix-icon">🔑</span>
+        <h3 class="fix-title">You own it. Full stop.</h3>
+        <p class="fix-subtitle">Your domain. Your asset. Forever.</p>
+        <p class="fix-body">You buy the domain. We connect everything. If you ever leave, the whole thing comes with you. No vendor lock-in. No hostage situations. It's yours on day one.</p>
+      </div>
+      <div class="fix-card" style="--card-color:#1A5276;">
+        <div class="fix-card-bg"></div>
+        <div class="fix-num">04</div>
+        <span class="fix-icon">📈</span>
+        <h3 class="fix-title">Starts small. Compounds forever.</h3>
+        <p class="fix-subtitle">Every piece you add stacks on the last.</p>
+        <p class="fix-body">Nothing you do early gets wasted. Every blog post, every GMB update, every keyword — it builds. Six months from now you'll be glad you started today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ REC STRIP ══════════════════ -->
+<div class="rec-strip">
+  <div class="rec-inner">
+    <span class="rec-icon">💡</span>
+    <p class="rec-text">Someone quoted you <strong>$700 just to put your name on a map</strong>. For the same $700, you get that listing AND a full website that does the selling for you. Same number. Not even close to the same value.</p>
+    <span class="rec-badge">Minimum Recommended</span>
+  </div>
+</div>
+
+<!-- ══════════════════ PRICING ══════════════════ -->
+<section class="pricing-section">
+  <div class="section-wrap">
+
+    <div class="gsap-fade">
+      <p class="s-eyebrow">03 — Pricing</p>
+      <h2 class="s-h">Two Ways to<br><em>Move Forward</em></h2>
+      <p class="s-lead">Two clear paths. Both include a professional website built for you. The difference is how far you want to go from day one.</p>
+    </div>
+
+    <div class="price-grid gsap-scale" id="priceGrid" style="margin-top:3rem;">
+      <div class="price-card gsap-fade">
+        <div class="price-card-glow"></div>
+        <div class="price-top t-green"></div>
+        <span class="price-badge badge-green">⭐ Recommended Start</span>
+        <p class="price-tier">Starter</p>
+        <p class="price-name">Get Found</p>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-num">700</span>
+          <span class="price-period">one-time</span>
+        </div>
+        <div class="price-rule"></div>
+        <p class="price-desc">Someone quoted you $700 just to add you to Google Maps. For the same price, you get the listing AND a full website. Same price. Infinitely more.</p>
+        <ul class="price-list">
+          <li class="price-item"><span class="p-check">✓</span>Personal website — built and live</li>
+          <li class="price-item"><span class="p-check">✓</span>Google Business Profile setup and verification</li>
+          <li class="price-item"><span class="p-check">✓</span>Your domain — you buy and own it, we connect it</li>
+          <li class="price-item"><span class="p-check">✓</span>Mobile-responsive design</li>
+          <li class="price-item"><span class="p-check">✓</span>Contact form and click-to-call</li>
+          <li class="price-item"><span class="p-check">✓</span>Basic SEO foundations</li>
+          <li class="price-item"><span class="p-check">✓</span>2 rounds of revisions</li>
+        </ul>
+        <a href="mailto:suhaas@svresearchgroup.com" class="price-cta cta-outline">Choose Starter →</a>
+      </div>
+      <div class="price-card featured gsap-fade">
+        <div class="price-card-glow"></div>
+        <div class="price-top t-gold"></div>
+        <span class="price-badge badge-gold">Most Complete</span>
+        <p class="price-tier">Professional</p>
+        <p class="price-name">Get Credibility</p>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-num">1,200</span>
+          <span class="price-period">one-time</span>
+        </div>
+        <div class="price-rule"></div>
+        <p class="price-desc">For people who don't just want to show up — they want to dominate. Brand, content, SEO, analytics. This is how you become the obvious choice in your market.</p>
+        <ul class="price-list">
+          <li class="price-item"><span class="p-check">✓</span>Everything in Starter</li>
+          <li class="price-item"><span class="p-check">✓</span>Custom brand identity (colours, typography, logo)</li>
+          <li class="price-item"><span class="p-check">✓</span>3 blog posts to kickstart SEO rankings</li>
+          <li class="price-item"><span class="p-check">✓</span>Testimonials and social proof section</li>
+          <li class="price-item"><span class="p-check">✓</span>Buyers and sellers service pages</li>
+          <li class="price-item"><span class="p-check">✓</span>Google Analytics connected</li>
+          <li class="price-item"><span class="p-check">✓</span>3 rounds of revisions</li>
+        </ul>
+        <a href="mailto:suhaas@svresearchgroup.com" class="price-cta cta-gold">Choose Professional →</a>
+      </div>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="addon-header gsap-fade">
+      <p class="s-eyebrow" style="margin-bottom:0.5rem;">Optional Add-Ons</p>
+      <h3 style="font-family:var(--fd);font-size:2rem;font-weight:300;color:var(--white);">The Long Game — <em style="font-style:italic;color:var(--gold2);">Monthly Momentum</em></h3>
+      <p style="font-size:0.88rem;color:var(--mist);margin-top:0.5rem;max-width:520px;">Keeps your site active, your GMB fresh, and your SEO quietly building. Layer on top of either one-time plan. Cancel anytime.</p>
+    </div>
+
+    <div class="price-grid gsap-scale" id="addonGrid">
+      <div class="price-card gsap-fade">
+        <div class="price-card-glow"></div>
+        <div class="price-top t-dim"></div>
+        <span class="price-badge badge-dim">Add-On Tier 1</span>
+        <p class="price-tier">Essentials</p>
+        <p class="price-name">Stay Active</p>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-num">99</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="price-rule"></div>
+        <p class="price-desc">The lightest touch. Keeps your presence alive and Google profile current without a big monthly commitment.</p>
+        <ul class="price-list">
+          <li class="price-item"><span class="p-check">✓</span>1 blog post per month (SEO-targeted)</li>
+          <li class="price-item"><span class="p-check">✓</span>Monthly Google Business Profile update</li>
+          <li class="price-item"><span class="p-check">✓</span>1 website update per month</li>
+          <li class="price-item"><span class="p-check">✓</span>Priority support</li>
+          <li class="price-item"><span class="p-check">✓</span>Cancel anytime</li>
+        </ul>
+        <a href="mailto:suhaas@svresearchgroup.com" class="price-cta cta-outline">Add This On →</a>
+      </div>
+      <div class="price-card featured gsap-fade">
+        <div class="price-card-glow"></div>
+        <div class="price-top t-gold"></div>
+        <span class="price-badge badge-gold">Add-On Tier 2</span>
+        <p class="price-tier">Growth</p>
+        <p class="price-name">Build Rankings</p>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-num">297</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="price-rule"></div>
+        <p class="price-desc">More content, more velocity. For when you're ready to rank consistently and turn your site into a lead machine.</p>
+        <ul class="price-list">
+          <li class="price-item"><span class="p-check">✓</span>3 blog posts per month (SEO-targeted)</li>
+          <li class="price-item"><span class="p-check">✓</span>Monthly Google Business Profile update</li>
+          <li class="price-item"><span class="p-check">✓</span>Up to 3 website updates per month</li>
+          <li class="price-item"><span class="p-check">✓</span>Monthly keyword ranking report</li>
+          <li class="price-item"><span class="p-check">✓</span>Performance analytics dashboard</li>
+          <li class="price-item"><span class="p-check">✓</span>Priority support · Cancel anytime</li>
+        </ul>
+        <a href="mailto:suhaas@svresearchgroup.com" class="price-cta cta-gold">Add This On →</a>
+      </div>
+    </div>
+
+    <div class="stacking-note gsap-fade">
+      <span style="font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;">💡</span>
+      <p><strong>How it stacks:</strong> Pick either one-time plan, then optionally layer on a monthly retainer. The $99 Essentials is the easiest entry. The $297 Growth tier is for when you're ready to dominate local search. Both cancel anytime, no contracts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ COMPARISON TABLE ══════════════════ -->
+<section class="table-section">
+  <div class="section-wrap">
+    <div class="gsap-fade">
+      <p class="s-eyebrow">What's Included</p>
+      <h2 class="s-h">Side by <em>Side</em></h2>
+    </div>
+    <div class="comp-table gsap-scale" style="overflow-x:auto;">
+      <div class="comp-row">
+        <div class="comp-cell head">Feature</div>
+        <div class="comp-cell head">Starter</div>
+        <div class="comp-cell head gold hi">Professional</div>
+        <div class="comp-cell head">+$99/mo</div>
+        <div class="comp-cell head">+$297/mo</div>
+      </div>
+      <div class="comp-row alt"><div class="comp-cell feat">Personal website</div><div class="comp-cell"><span class="chk">✓</span></div><div class="comp-cell hi"><span class="chk">✓</span></div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell"><span class="dsh">—</span></div></div>
+      <div class="comp-row"><div class="comp-cell feat">Google Business Profile</div><div class="comp-cell"><span class="chk">✓</span></div><div class="comp-cell hi"><span class="chk">✓</span></div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell"><span class="dsh">—</span></div></div>
+      <div class="comp-row alt"><div class="comp-cell feat">Your domain (you own it)</div><div class="comp-cell"><span class="chk">✓</span></div><div class="comp-cell hi"><span class="chk">✓</span></div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell"><span class="dsh">—</span></div></div>
+      <div class="comp-row"><div class="comp-cell feat">Custom brand identity</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell hi"><span class="chk">✓</span></div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell"><span class="dsh">—</span></div></div>
+      <div class="comp-row alt"><div class="comp-cell feat">SEO blog posts (kickstart)</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell hi" style="color:var(--cream);">3</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell"><span class="dsh">—</span></div></div>
+      <div class="comp-row"><div class="comp-cell feat">Monthly blog posts</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell hi"><span class="dsh">—</span></div><div class="comp-cell" style="color:var(--cream);">1/mo</div><div class="comp-cell"><span class="chk">3/mo</span></div></div>
+      <div class="comp-row alt"><div class="comp-cell feat">Monthly GMB update</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell hi"><span class="dsh">—</span></div><div class="comp-cell"><span class="chk">✓</span></div><div class="comp-cell"><span class="chk">✓</span></div></div>
+      <div class="comp-row"><div class="comp-cell feat">Website updates / month</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell hi"><span class="dsh">—</span></div><div class="comp-cell" style="color:var(--cream);">1</div><div class="comp-cell"><span class="chk">3</span></div></div>
+      <div class="comp-row alt"><div class="comp-cell feat">Ranking report</div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell hi"><span class="dsh">—</span></div><div class="comp-cell"><span class="dsh">—</span></div><div class="comp-cell"><span class="chk">✓</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ NEXT STEPS ══════════════════ -->
+<section class="steps-section">
+  <div class="section-wrap">
+    <div class="gsap-fade">
+      <p class="s-eyebrow">04 — Next Steps</p>
+      <h2 class="s-h">How We<br><em>Get Started</em></h2>
+      <p class="s-lead">Once you pick a plan, here's exactly what happens — no ambiguity, no surprises.</p>
+    </div>
+    <div class="steps-grid" id="stepsGrid">
+      <div class="step-card gsap-fade">
+        <div class="step-card-glow"></div>
+        <p class="step-num">01</p>
+        <div class="step-accent"></div>
+        <h4>You choose a plan</h4>
+        <p>We agree on the package that fits your goals. No pressure — Starter is a completely solid starting point.</p>
+      </div>
+      <div class="step-card gsap-fade">
+        <div class="step-card-glow"></div>
+        <p class="step-num">02</p>
+        <div class="step-accent"></div>
+        <h4>Quick intake — 20 min</h4>
+        <p>Your headshot, a short bio, services you offer, domain login. Fast and painless on your end.</p>
+      </div>
+      <div class="step-card gsap-fade">
+        <div class="step-card-glow"></div>
+        <p class="step-num">03</p>
+        <div class="step-accent"></div>
+        <h4>Website goes live</h4>
+        <p>Within 5–7 business days your site is live and GMB submitted for verification. You see it before it goes live.</p>
+      </div>
+      <div class="step-card gsap-fade">
+        <div class="step-card-glow"></div>
+        <p class="step-num">04</p>
+        <div class="step-accent"></div>
+        <h4>You start sharing it</h4>
+        <p>Every cold call now has a destination. Every contact can Google you and find exactly what they need to say yes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SIGNOFF ══════════════════ -->
+<section class="signoff">
+  <div class="signoff-inner">
+    <div class="gsap-left">
+      <p class="signoff-quote">"You've already done the hardest part. You built the expertise, made the calls, earned the trust. All we're doing is making sure the internet doesn't get in the way of the rest."</p>
+      <p class="signoff-from">Suhaas Venkatesh · Prepared for Ruchika Tekkeveetil · April 2026</p>
+    </div>
+    <div class="signoff-contact gsap-fade">
+      <p class="signoff-name">Suhaas Venkatesh</p>
+      <a href="tel:+16479165055">+1 647-916-5055</a>
+      <a href="mailto:suhaas@svresearchgroup.com">suhaas@svresearchgroup.com</a>
+      <a href="https://svresearchgroup.com" target="_blank" rel="noopener">svresearchgroup.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <span class="footer-logo"><em>Ruchika</em> Tekkeveetil · Online Presence Proposal</span>
+  <span class="footer-txt">Confidential · Valid 30 Days · April 2026</span>
+</footer>
+
+<!-- ══════════════════ SCRIPTS ══════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* ── CANVAS MESH GRADIENT (cinematic-site-components technique) ── */
+(function initMesh(){
+  var canvas = document.getElementById('heroCanvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H;
+
+  function resize(){
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var blobs = [
+    {x:0.12,y:0.22,vx:0.00028,vy:0.00018,r:0.42,col:'rgba(184,150,62,0.16)'},
+    {x:0.78,y:0.58,vx:-0.00022,vy:0.00025,r:0.35,col:'rgba(20,36,58,0.95)'},
+    {x:0.48,y:0.88,vx:0.00035,vy:-0.00028,r:0.30,col:'rgba(184,150,62,0.09)'},
+    {x:0.88,y:0.12,vx:-0.00028,vy:0.00032,r:0.28,col:'rgba(8,15,26,0.98)'},
+    {x:0.25,y:0.65,vx:0.00018,vy:-0.00020,r:0.24,col:'rgba(184,150,62,0.07)'},
+    {x:0.62,y:0.35,vx:-0.00015,vy:0.00015,r:0.20,col:'rgba(26,82,118,0.18)'},
+  ];
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle = '#080F1A';
+    ctx.fillRect(0,0,W,H);
+
+    blobs.forEach(function(b){
+      b.x += b.vx;
+      b.y += b.vy;
+      if(b.x < -0.15 || b.x > 1.15) b.vx *= -1;
+      if(b.y < -0.15 || b.y > 1.15) b.vy *= -1;
+
+      var grd = ctx.createRadialGradient(b.x*W, b.y*H, 0, b.x*W, b.y*H, b.r * Math.max(W,H));
+      grd.addColorStop(0, b.col);
+      grd.addColorStop(1, 'transparent');
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.fillStyle = grd;
+      ctx.fillRect(0,0,W,H);
+      ctx.globalCompositeOperation = 'source-over';
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+
+/* ── PROGRESS BAR ── */
+(function(){
+  var bar = document.getElementById('progressBar');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    bar.style.transform = 'scaleX(' + Math.min(pct,1) + ')';
+  }, {passive:true});
+})();
+
+
+/* ── HERO ENTRANCE (CSS transitions approach, GSAP if loaded) ── */
+(function initHeroEntrance(){
+  function animHero(){
+    var tl = gsap.timeline({delay:0.25});
+
+    // Eyebrow
+    tl.to('#heroEyebrow', {opacity:1, y:0, duration:0.7, ease:'power3.out'}, 0.1);
+
+    // Title lines — clip reveal
+    tl.to('.hero-title', {duration:0.01, opacity:1}, 0.35);
+    tl.to('#titleA', {y:'0%', duration:0.95, ease:'power4.out'}, 0.35);
+    tl.to('#titleB', {y:'0%', duration:0.95, ease:'power4.out'}, 0.5);
+
+    // Sub
+    tl.to('#heroSub', {opacity:1, y:0, duration:0.75, ease:'power3.out'}, 0.85);
+
+    // Rule
+    tl.to('.hero-rule', {width:'80px', duration:0.9, ease:'power2.out'}, 0.95);
+
+    // Meta
+    tl.to('#heroMeta', {opacity:1, y:0, duration:0.75, ease:'power3.out'}, 1.05);
+
+    // Footer
+    tl.to('#heroFooter', {opacity:1, y:0, duration:0.75, ease:'power3.out'}, 1.25);
+  }
+
+  // Text scramble on name
+  function scramble(el, finalText, duration){
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var t0 = performance.now();
+    function tick(now){
+      var p = Math.min((now - t0) / duration, 1);
+      var revealed = Math.floor(Math.pow(p, 0.7) * finalText.length);
+      var result = '';
+      for(var i = 0; i < finalText.length; i++){
+        if(i < revealed) result += finalText[i];
+        else if(finalText[i] === ' ') result += ' ';
+        else result += chars[Math.floor(Math.random() * chars.length)];
+      }
+      el.textContent = result;
+      if(p < 1) requestAnimationFrame(tick);
+      else el.textContent = finalText;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if(typeof gsap !== 'undefined'){
+    animHero();
+    setTimeout(function(){
+      var el = document.getElementById('titleB');
+      if(el) scramble(el, 'Ruchika Tekkeveetil', 1100);
+    }, 550);
+  } else {
+    // Fallback CSS
+    ['#heroEyebrow','#heroSub','#heroMeta','#heroFooter'].forEach(function(sel){
+      var el = document.querySelector(sel);
+      if(el) el.style.cssText += 'opacity:1;transform:none;transition:opacity 0.7s ease,transform 0.7s ease;';
+    });
+    document.querySelector('.hero-rule').style.cssText += 'width:80px;transition:width 0.9s ease;';
+    document.querySelector('#titleA').style.transform = 'translateY(0)';
+    document.querySelector('#titleB').style.transform = 'translateY(0)';
+    document.querySelector('.hero-title').style.opacity = '1';
+  }
+})();
+
+
+/* ── SCROLL REVEAL via GSAP ScrollTrigger ── */
+(function initScrollReveal(){
+  if(typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined'){
+    // Fallback: show everything
+    document.querySelectorAll('.gsap-fade,.gsap-left,.gsap-scale').forEach(function(el){
+      el.style.cssText += 'opacity:1;transform:none;';
+    });
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.gsap-fade').forEach(function(el, i){
+    gsap.to(el, {
+      opacity:1, y:0,
+      duration:0.8,
+      ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 87%', once:true}
+    });
+  });
+
+  gsap.utils.toArray('.gsap-left').forEach(function(el){
+    gsap.to(el, {
+      opacity:1, x:0,
+      duration:0.9,
+      ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 87%', once:true}
+    });
+  });
+
+  gsap.utils.toArray('.gsap-scale').forEach(function(el){
+    gsap.to(el, {
+      opacity:1, scale:1,
+      duration:0.85,
+      ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 88%', once:true}
+    });
+  });
+
+  // Staggered journey steps
+  var jSteps = document.querySelectorAll('.j-step');
+  if(jSteps.length){
+    gsap.set(jSteps, {opacity:0, y:20});
+    ScrollTrigger.create({
+      trigger:'#journeyFlow',
+      start:'top 80%',
+      once:true,
+      onEnter:function(){
+        gsap.to(jSteps, {opacity:1, y:0, duration:0.65, ease:'power3.out', stagger:0.1});
+      }
+    });
+  }
+
+  // Staggered sit cards
+  var sitCards = document.querySelectorAll('.sit-card');
+  if(sitCards.length){
+    gsap.set(sitCards, {opacity:0, y:24});
+    ScrollTrigger.create({
+      trigger:'#sitGrid',
+      start:'top 80%',
+      once:true,
+      onEnter:function(){
+        gsap.to(sitCards, {opacity:1, y:0, duration:0.7, ease:'power3.out', stagger:0.1});
+      }
+    });
+  }
+
+  // Staggered step cards
+  var stepCards = document.querySelectorAll('.step-card');
+  if(stepCards.length){
+    gsap.set(stepCards, {opacity:0, y:24});
+    ScrollTrigger.create({
+      trigger:'#stepsGrid',
+      start:'top 82%',
+      once:true,
+      onEnter:function(){
+        gsap.to(stepCards, {opacity:1, y:0, duration:0.7, ease:'power3.out', stagger:0.1});
+      }
+    });
+  }
+
+  // Price cards stagger
+  var pCards = document.querySelectorAll('#priceGrid .price-card, #addonGrid .price-card');
+  if(pCards.length){
+    pCards.forEach(function(card){
+      gsap.set(card, {opacity:0, y:20});
+      ScrollTrigger.create({
+        trigger:card,
+        start:'top 88%',
+        once:true,
+        onEnter:function(){
+          gsap.to(card, {opacity:1, y:0, duration:0.75, ease:'power3.out'});
+        }
+      });
+    });
+  }
+})();
+
+
+/* ── SPOTLIGHT CURSOR GLOW (cinematic-site-components technique) ── */
+(function initSpotlight(){
+  function attach(containerId, cardSel, glowSel){
+    var container = document.getElementById(containerId);
+    if(!container) return;
+    container.addEventListener('mousemove', function(e){
+      container.querySelectorAll(cardSel).forEach(function(card){
+        var r = card.getBoundingClientRect();
+        var mx = e.clientX - r.left;
+        var my = e.clientY - r.top;
+        card.style.setProperty('--mx', mx + 'px');
+        card.style.setProperty('--my', my + 'px');
+        var glow = card.querySelector(glowSel);
+        if(glow){
+          glow.style.setProperty('--mx', mx + 'px');
+          glow.style.setProperty('--my', my + 'px');
+        }
+      });
+    }, {passive:true});
+  }
+  attach('priceGrid', '.price-card', '.price-card-glow');
+  attach('addonGrid', '.price-card', '.price-card-glow');
+  attach('stepsGrid', '.step-card', '.step-card-glow');
+  attach('sitGrid', '.sit-card', '.sit-card-glow');
+})();
+
+
+/* ── MARQUEE VELOCITY ── */
+(function(){
+  var track = document.getElementById('marqueeTrack');
+  if(!track) return;
+  var lastY = 0;
+  window.addEventListener('scroll', function(){
+    var dy = Math.abs(window.scrollY - lastY);
+    lastY = window.scrollY;
+    var speed = Math.max(7, 22 - dy * 0.35);
+    track.style.animationDuration = speed + 's';
+  }, {passive:true});
+})();
+
+
+/* ── PARTICLE EXPLOSION on price CTAs (cinematic-site-components technique) ── */
+(function initParticles(){
+  document.querySelectorAll('.price-cta').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      var cx = e.clientX, cy = e.clientY;
+      var count = 14;
+      var colors = ['#D4A843','#F0D99A','#FDFCFA','#B8963E'];
+      for(var i = 0; i < count; i++){
+        var p = document.createElement('div');
+        var angle = (Math.PI * 2 * i) / count;
+        var dist = 55 + Math.random() * 45;
+        p.style.cssText = [
+          'position:fixed',
+          'width:4px','height:4px',
+          'border-radius:50%',
+          'background:' + colors[i % colors.length],
+          'pointer-events:none',
+          'z-index:9999',
+          'left:' + cx + 'px',
+          'top:' + cy + 'px',
+          'transform:translate(-50%,-50%)',
+        ].join(';');
+        document.body.appendChild(p);
+
+        var tx = Math.cos(angle) * dist;
+        var ty = Math.sin(angle) * dist;
+
+        if(typeof gsap !== 'undefined'){
+          gsap.to(p, {
+            x:tx, y:ty, opacity:0, scale:0,
+            duration:0.65,
+            ease:'power3.out',
+            onComplete:function(){ if(p.parentNode) p.parentNode.removeChild(p); }
+          });
+        } else {
+          p.style.transition = 'all 0.65s cubic-bezier(0.16,1,0.3,1)';
+          requestAnimationFrame(function(){
+            p.style.transform = 'translate(calc(-50% + ' + tx + 'px), calc(-50% + ' + ty + 'px)) scale(0)';
+            p.style.opacity = '0';
+          });
+          setTimeout(function(){ if(p.parentNode) p.parentNode.removeChild(p); }, 700);
+        }
+      }
+    });
+  });
+})();
+
+})(); // end IIFE
+</script>
+</body>
+</html>
