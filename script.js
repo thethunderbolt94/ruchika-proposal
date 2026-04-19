@@ -61,7 +61,7 @@
   }
 
   /* ─── Scroll Reveal ──────────────────────── */
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal, .section-enter');
   if (reveals.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -70,11 +70,10 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => observer.observe(el));
   } else {
-    // Fallback: just show everything
     reveals.forEach(el => el.classList.add('visible'));
   }
 
@@ -163,6 +162,16 @@
         const top = target.getBoundingClientRect().top + window.scrollY - navH - 20;
         window.scrollTo({ top, behavior: 'smooth' });
       }
+    });
+  });
+
+  /* ─── FAQ Toggle ────────────────────────── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(i => i.classList.remove('is-open'));
+      if (!isOpen) item.classList.add('is-open');
     });
   });
 
