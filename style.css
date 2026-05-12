@@ -440,6 +440,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-size: 13px;
   color: var(--color-text-muted);
   line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .brokerage-bar strong {
   color: var(--color-primary);
@@ -449,9 +454,25 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--color-accent);
   text-decoration: underline;
 }
+.brokerage-bar-logo {
+  height: 22px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
 .brokerage-bar + .page-hero { padding-top: 48px; }
 @media (max-width: 768px) {
-  .brokerage-bar { padding: 72px 16px 12px; font-size: 12px; }
+  .brokerage-bar { padding: 72px 16px 12px; font-size: 12px; gap: 8px; }
+  .brokerage-bar-logo { height: 18px; }
+}
+
+/* Footer brokerage logo */
+.footer-brokerage-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 10px;
 }
 
 /* ─── Hero ───────────────────────────────────── */
