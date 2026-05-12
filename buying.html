@@ -3,38 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acquire a Business in Western Canada — Ruchika Tekkeveetil</title>
-  <meta name="description" content="Ruchika Tekkeveetil represents qualified buyers in essential infrastructure sectors. Confidential acquisition advisory. $7.5M–$60M revenue. Western Canada & Pacific NW.">
+  <title>Buy a Business — Ruchika Tekkeveetil, BC Business Broker</title>
+  <meta name="description" content="Ruchika Tekkeveetil represents qualified buyers acquiring businesses across British Columbia. Confidential acquisition advisory for first-time and experienced buyers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-hero { min-height: 60vh; display:flex; flex-direction:column; justify-content:flex-end; padding: 0 80px 80px; position:relative; overflow:hidden; background:var(--color-bg); padding-top:120px; }
-    .page-hero-bg { position:absolute; inset:0; background: radial-gradient(ellipse 70% 60% at 70% 40%, rgba(181,146,76,0.05) 0%, transparent 60%); }
-    .page-hero-grain { position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); pointer-events:none; }
-    .page-hero-content { position:relative; z-index:1; max-width:700px; }
-    .page-hero-title { font-family:var(--font-display); font-size:clamp(40px,5.5vw,76px); font-weight:300; font-style:italic; line-height:1.0; color:var(--color-primary); margin:20px 0 24px; }
-    .page-hero-title em { color:var(--color-accent); font-style:normal; }
-    .page-hero-sub { font-family:var(--font-body); font-size:17px; line-height:1.7; color:var(--color-text-muted); font-style:italic; max-width:520px; margin-bottom:40px; }
-    .criteria-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--color-border); border:1px solid var(--color-border); margin-top:48px; }
-    .criteria-cell { background:var(--color-bg); padding:40px 36px; }
-    .criteria-cell-label { font-family:var(--font-display); font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--color-text-muted); display:block; margin-bottom:12px; }
-    .criteria-cell-value { font-family:var(--font-heading); font-size:24px; font-weight:700; color:var(--color-primary); line-height:1.1; margin-bottom:8px; }
-    .criteria-cell-sub { font-family:var(--font-body); font-size:13px; color:var(--color-text-muted); font-style:italic; line-height:1.5; }
-    .sectors-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--color-border); border:1px solid var(--color-border); margin-top:48px; }
-    .sector-item { background:var(--color-bg); padding:36px 28px; display:flex; flex-direction:column; gap:14px; transition:background 0.3s ease; }
-    .sector-item:hover { background:var(--color-surface); }
-    .sector-icon { width:28px; height:28px; stroke:var(--color-accent); flex-shrink:0; }
-    .sector-name { font-family:var(--font-heading); font-size:15px; font-weight:700; color:var(--color-primary); line-height:1.3; }
-    .sector-detail { font-family:var(--font-body); font-size:13px; color:var(--color-text-muted); font-style:italic; line-height:1.55; }
-    @media(max-width:960px){ .page-hero{padding:120px 32px 60px;} .criteria-grid{grid-template-columns:1fr 1fr;} .sectors-grid{grid-template-columns:repeat(2,1fr);} }
-    @media(max-width:600px){ .criteria-grid{grid-template-columns:1fr;} .sectors-grid{grid-template-columns:1fr;} }
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .criteria-cell {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .criteria-cell-label {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .criteria-cell-value {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .criteria-cell-sub {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .sector-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sector-icon {
+      width: 28px;
+      height: 28px;
+      stroke: var(--color-accent);
+      flex-shrink: 0;
+    }
+    .sector-name {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .sector-detail {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+    }
+    @media (max-width: 960px) {
+      .criteria-grid { grid-template-columns: 1fr 1fr; }
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .criteria-grid { grid-template-columns: 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="cursor" id="cursor"></div>
+  <a href="#main" class="visually-hidden" style="position:absolute;left:-9999px;" onfocus="this.style.cssText='position:fixed;left:16px;top:16px;background:#0F172A;color:#fff;padding:12px 18px;border-radius:6px;z-index:1000;'">Skip to content</a>
 
   <!-- WhatsApp FAB -->
   <a href="https://wa.me/17786888480" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -49,214 +109,238 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="selling.html">Selling</a></li>
       <li><a href="buying.html">Buying</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="intake.html?type=valuation">Valuation</a></li>
+      <li><a href="index.html#about">About</a></li>
     </ul>
-    <a href="intake.html" class="nav-cta">Get Started</a>
+    <a href="intake.html" class="nav-cta">Book a call</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-grain"></div>
-    <div class="page-hero-content">
-      <p class="eyebrow reveal">Acquisition Advisory</p>
-      <h1 class="page-hero-title reveal">Acquire a Business<br><em>in Western Canada</em></h1>
-      <p class="page-hero-sub reveal" style="transition-delay:0.2s">Ruchika represents qualified buyers with a focused mandate in essential infrastructure sectors. $7.5M&ndash;$60M revenue. Confidential process.</p>
-      <a href="intake.html" class="btn-primary reveal" style="transition-delay:0.35s">Start a Confidential Conversation</a>
-    </div>
-  </section>
+  <main id="main">
 
-  <!-- Acquisition Criteria -->
-  <section class="section section--bordered" id="criteria">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <p class="eyebrow">Acquisition Mandate</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">What We&rsquo;re Looking For</h2>
-      </div>
-      <div class="criteria-grid section-enter">
-        <div class="criteria-cell">
-          <span class="criteria-cell-label">Revenue Range</span>
-          <div class="criteria-cell-value">$7.5M &ndash; $60M</div>
-          <div class="criteria-cell-sub">Ideally 40%+ recurring or repeat revenue</div>
-        </div>
-        <div class="criteria-cell">
-          <span class="criteria-cell-label">EBITDA Target</span>
-          <div class="criteria-cell-value">$1.5M &ndash; $8.0M</div>
-          <div class="criteria-cell-sub">15%+ margins preferred &middot; SaaS: $4M+ rev</div>
-        </div>
-        <div class="criteria-cell">
-          <span class="criteria-cell-label">Growth Profile</span>
-          <div class="criteria-cell-value">~10% CAGR</div>
-          <div class="criteria-cell-sub">5+ years operations, stable cash flow</div>
-        </div>
-        <div class="criteria-cell">
-          <span class="criteria-cell-label">Customer Concentration</span>
-          <div class="criteria-cell-value">&lt;40%</div>
-          <div class="criteria-cell-sub">No single client &gt;40% of revenue</div>
-        </div>
-        <div class="criteria-cell">
-          <span class="criteria-cell-label">Geography</span>
-          <div class="criteria-cell-value">Canada &amp; USA</div>
-          <div class="criteria-cell-sub">Strong preference Western Canada &amp; Pacific NW</div>
-        </div>
-        <div class="criteria-cell">
-          <span class="criteria-cell-label">Industry Focus</span>
-          <div class="criteria-cell-value">Essential Infrastructure</div>
-          <div class="criteria-cell-sub">Healthcare &middot; Logistics &middot; Construction &middot; Energy &middot; Manufacturing</div>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <p class="page-hero-eyebrow">Buying a business</p>
+        <h1 class="page-hero-title">Finding the right business to acquire across British Columbia.</h1>
+        <p class="page-hero-sub">Guided acquisition for first-time buyers, experienced operators, and family offices. From search criteria to due diligence to close.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="intake.html?type=buy" class="btn-primary" style="background:#FFFFFF;color:var(--color-primary)">Start a confidential conversation</a>
+          <a href="#criteria" class="btn-ghost" style="color:#FFFFFF;border-color:rgba(255,255,255,0.4)">See what I look for</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sectors Grid -->
-  <section class="section" id="sectors">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <p class="eyebrow">Target Sectors</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">Essential Infrastructure</h2>
-      </div>
-      <div class="sectors-grid section-enter">
-        <div class="sector-item">
-          <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-          <div class="sector-name">Healthcare &amp; Social</div>
-          <div class="sector-detail">Software, diagnostics, labs, education, senior &amp; child care</div>
+    <!-- Acquisition Criteria -->
+    <section class="section about-bg" id="criteria">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="eyebrow">Acquisition criteria</p>
+          <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">What I look for in an acquisition</h2>
+          <p class="body-text muted-text" style="max-width:600px;margin-top:14px">Most acquisitions I help with fall inside these parameters. Outside them is not a no, just a longer conversation.</p>
         </div>
-        <div class="sector-item">
-          <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
-          </svg>
-          <div class="sector-name">Transport &amp; Logistics</div>
-          <div class="sector-detail">Licensing, cold storage, safety &amp; compliance</div>
-        </div>
-        <div class="sector-item">
-          <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <polygon points="3 22 21 22 21 8 12 2 3 8 3 22"/>
-          </svg>
-          <div class="sector-name">Construction &amp; Building</div>
-          <div class="sector-detail">Energy-efficient solutions, septic, fire alarm</div>
-        </div>
-        <div class="sector-item">
-          <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/>
-          </svg>
-          <div class="sector-name">Energy &amp; Environmental</div>
-          <div class="sector-detail">Wastewater, waste mgmt, solar, energy auditing</div>
-        </div>
-        <div class="sector-item">
-          <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-          </svg>
-          <div class="sector-name">Manufacturing &amp; Distribution</div>
-          <div class="sector-detail">Essential goods, industrial distribution</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Work With Ruchika -->
-  <section class="section process-bg">
-    <div class="section-inner">
-      <div class="section-header text-center reveal">
-        <p class="eyebrow">Why Ruchika</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">A broker who means business</h2>
-      </div>
-      <div class="services-grid section-enter" style="margin-top:48px">
-        <div class="service-card">
-          <div class="service-card-num">01</div>
-          <h3 class="service-card-title">Focused Mandate</h3>
-          <p class="service-card-desc">Ruchika isn&rsquo;t searching broadly &mdash; she represents a buyer with a clear acquisition profile. Your business gets evaluated quickly and seriously, not passed around.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-num">02</div>
-          <h3 class="service-card-title">Complete Confidentiality</h3>
-          <p class="service-card-desc">All initial discussions are under strict NDA. No public listings, no competitor visibility. Discretion is not optional &mdash; it&rsquo;s the starting point.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-num">03</div>
-          <h3 class="service-card-title">Win-Win Philosophy</h3>
-          <p class="service-card-desc">14 years of building transactions where both sides leave satisfied. Long-term relationships matter more than any single deal.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <p class="eyebrow">Common Questions</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">Questions from Sellers</h2>
-      </div>
-      <div class="faq-list" style="margin-top:48px">
-        <div class="faq-item">
-          <button class="faq-question">What industries are you focused on?</button>
-          <div class="faq-answer">
-            <p>Healthcare, logistics, construction, energy/environmental, and manufacturing &mdash; businesses that form essential community infrastructure.</p>
+        <div class="criteria-grid">
+          <div class="criteria-cell">
+            <span class="criteria-cell-label">Revenue range</span>
+            <div class="criteria-cell-value">$1M to $25M</div>
+            <div class="criteria-cell-sub">Owner-operator scale through to lower mid-market.</div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What revenue range are you targeting?</button>
-          <div class="faq-answer">
-            <p>$7.5M to $60M in annual revenue, with EBITDA between $1.5M and $8M. For SaaS businesses, $4M+ revenue at or near breakeven.</p>
+          <div class="criteria-cell">
+            <span class="criteria-cell-label">Profitability</span>
+            <div class="criteria-cell-value">Established earnings</div>
+            <div class="criteria-cell-sub">Stable or growing cash flow over the last three years.</div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Is my business too small or too large?</button>
-          <div class="faq-answer">
-            <p>If your revenue is outside $7.5M&ndash;$60M, reach out anyway &mdash; criteria can flex for the right opportunity.</p>
+          <div class="criteria-cell">
+            <span class="criteria-cell-label">Operating history</span>
+            <div class="criteria-cell-value">Five years or more</div>
+            <div class="criteria-cell-sub">A track record, not a turnaround project.</div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How confidential is the process?</button>
-          <div class="faq-answer">
-            <p>Completely. No public listings, no competitor visibility. All discussions are protected by NDA before any financials are shared.</p>
+          <div class="criteria-cell">
+            <span class="criteria-cell-label">Customer base</span>
+            <div class="criteria-cell-value">Diversified revenue</div>
+            <div class="criteria-cell-sub">No single client greater than 40 percent of revenue.</div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How long does an acquisition typically take?</button>
-          <div class="faq-answer">
-            <p>Typically 6&ndash;12 months from first conversation to close, depending on complexity, due diligence, and financing.</p>
+          <div class="criteria-cell">
+            <span class="criteria-cell-label">Geography</span>
+            <div class="criteria-cell-value">BC and Western Canada</div>
+            <div class="criteria-cell-sub">Strongest network in the Lower Mainland, Okanagan, and Island.</div>
+          </div>
+          <div class="criteria-cell">
+            <span class="criteria-cell-label">Industries</span>
+            <div class="criteria-cell-value">Essential operating businesses</div>
+            <div class="criteria-cell-sub">Healthcare, logistics, trades, manufacturing, hospitality.</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Band -->
-  <section class="cta-band">
-    <h2 class="cta-band-headline reveal">Ready to have a confidential conversation?</h2>
-    <p class="cta-band-sub reveal" style="transition-delay:0.15s">If your business fits these criteria, Ruchika wants to hear from you.</p>
-    <a href="intake.html" class="btn-white">Start Your Intake</a>
-  </section>
+    <!-- Target Sectors -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <p class="eyebrow">Sectors</p>
+          <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">Where I have the deepest network</h2>
+          <p class="body-text muted-text" style="max-width:600px;margin-top:14px">Essential, operating businesses that form the everyday infrastructure of British Columbia.</p>
+        </div>
+        <div class="sectors-grid">
+          <div class="sector-item">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            <div class="sector-name">Healthcare</div>
+            <div class="sector-detail">Clinics, labs, diagnostics, allied health, senior and child care.</div>
+          </div>
+          <div class="sector-item">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+            <div class="sector-name">Transport &amp; logistics</div>
+            <div class="sector-detail">Licensed carriers, cold storage, distribution, safety and compliance.</div>
+          </div>
+          <div class="sector-item">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polygon points="3 22 21 22 21 8 12 2 3 8 3 22"/>
+            </svg>
+            <div class="sector-name">Trades &amp; construction</div>
+            <div class="sector-detail">Specialty trades, residential and commercial builders, building services.</div>
+          </div>
+          <div class="sector-item">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+            <div class="sector-name">Energy &amp; environmental</div>
+            <div class="sector-detail">Waste management, solar, energy auditing, environmental services.</div>
+          </div>
+          <div class="sector-item">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+            </svg>
+            <div class="sector-name">Manufacturing</div>
+            <div class="sector-detail">Light industrial, essential goods, food and beverage, custom fabrication.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why work with me -->
+    <section class="section about-bg">
+      <div class="section-inner">
+        <div class="section-header reveal">
+          <h2 class="section-heading" style="font-size:clamp(26px,3vw,38px)">Why buyers work with me</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-card-num">01</div>
+            <h3 class="why-card-title">A focused search, not a listings feed</h3>
+            <p class="why-card-desc">You tell me what you are looking for and I do the searching, off-market and on. You see businesses that fit, not every listing in BC.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card-num">02</div>
+            <h3 class="why-card-title">First-time-buyer friendly</h3>
+            <p class="why-card-desc">If this is your first acquisition, the process is explained as we go. No assumed knowledge. No tactics that rely on you not knowing the playbook.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card-num">03</div>
+            <h3 class="why-card-title">Diligence support</h3>
+            <p class="why-card-desc">Introductions to BC business lawyers, accountants for quality-of-earnings work, and lenders who finance acquisitions. You do not assemble the team alone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-bg" id="faq">
+      <div class="section-inner">
+        <div class="section-header reveal" style="margin-bottom:32px">
+          <p class="eyebrow">Common questions</p>
+          <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">Questions buyers ask</h2>
+        </div>
+        <div class="faq-wrap">
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Who pays your fee, the buyer or the seller?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                It depends on the engagement. On the sell side, the seller pays a success-based commission at close. On a buy-side mandate, the buyer pays a retainer or success fee against an agreed mandate. The structure is written down before any work begins.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>I have never bought a business before. Is that a problem?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                Not at all. A significant share of buyers are acquiring their first business: immigrants new to Canada, executives leaving corporate roles, operators rolling up a sector. The process is explained as we move.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do I need financing in place before we start?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                Not entirely. A general sense of your equity capacity and an introduction to an acquisition lender (BDC, RBC, BMO, credit unions) is enough to start. Full financing is finalized after a deal is identified.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long does a typical acquisition take?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                Six to twelve months from engagement to close is typical. A motivated buyer with a clear mandate and a seller already in the network can close faster.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Will you also help me sell the business later?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes. Many clients buy through this practice and sell through it ten or fifteen years later. The relationship is the point.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <h2 class="cta-band-headline">Looking to buy a business in BC?</h2>
+      <p class="cta-band-sub">Tell me what you are looking for. The first conversation is confidential and no-obligation.</p>
+      <a href="intake.html?type=buy" class="btn-white">Start the conversation</a>
+    </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer style="background:var(--color-surface);border-top:1px solid var(--color-border)">
+  <footer>
     <div class="footer">
       <div>
         <div class="footer-brand-name">Ruchika Tekkeveetil</div>
-        <div class="footer-brand-tagline">Business Broker &middot; Realtor &middot; British Columbia</div>
+        <div class="footer-brand-tagline">Business Broker · Licensed Realtor · British Columbia</div>
+        <div class="footer-brand-note">Brokerage affiliation and licence numbers to be confirmed and listed here in accordance with BCFSA and RECBC requirements.</div>
       </div>
       <div>
         <div class="footer-col-title">Services</div>
         <ul class="footer-links">
-          <li><a href="selling.html">Sell a Business</a></li>
-          <li><a href="buying.html">Buy / Acquire</a></li>
-          <li><a href="intake.html?type=realestate">Real Estate</a></li>
-          <li><a href="intake.html?type=valuation">Business Valuation</a></li>
+          <li><a href="selling.html">Sell a business</a></li>
+          <li><a href="buying.html">Buy a business</a></li>
+          <li><a href="intake.html?type=valuation">Business valuation</a></li>
+          <li><a href="intake.html?type=realestate">Commercial real estate</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
-          <li><a href="intake.html">Start a Conversation</a></li>
-          <li><a href="https://wa.me/17786888480" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="brand-guide.html">Brand Guide</a></li>
+          <li><a href="intake.html">Book a call</a></li>
+          <li><a href="https://wa.me/17786888480" target="_blank" rel="noopener">WhatsApp: +1 (778) 688-8480</a></li>
+          <li><a href="mailto:contact@ruchikatekkeveetil.ca">contact@ruchikatekkeveetil.ca</a></li>
         </ul>
       </div>
     </div>

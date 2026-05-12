@@ -3,212 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get in Touch — Ruchika Tekkeveetil</title>
-  <meta name="description" content="Start a confidential conversation with Ruchika Tekkeveetil — BC Business Broker and Realtor.">
+  <title>Book a call — Ruchika Tekkeveetil, BC Business Broker</title>
+  <meta name="description" content="Start a confidential conversation with Ruchika Tekkeveetil, BC business broker and licensed realtor. Every inquiry is reviewed personally.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Intake-specific styles */
     .intake-wrap {
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding-top: 80px;
+      padding-top: 72px;
     }
     .intake-left {
       background: var(--color-primary);
-      padding: 80px 60px;
+      color: #FFFFFF;
+      padding: 64px 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: sticky;
-      top: 0;
-      height: 100vh;
+      top: 72px;
+      height: calc(100vh - 72px);
     }
     .intake-left-eyebrow {
-      font-family: var(--font-display);
-      font-size: 10px;
-      letter-spacing: 0.3em;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 32px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .intake-left-eyebrow::before { content:''; display:block; width:32px; height:1px; background:var(--color-accent); }
-    .intake-left-title {
-      font-family: var(--font-display);
-      font-size: clamp(36px, 3.5vw, 56px);
-      font-weight: 300;
-      font-style: italic;
-      color: #F2EDE4;
-      line-height: 1.05;
+      color: rgba(255,255,255,0.6);
       margin-bottom: 24px;
     }
-    .intake-left-sub {
-      font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.5);
-      font-style: italic;
-      max-width: 360px;
-      margin-bottom: 48px;
+    .intake-left-title {
+      font-family: var(--font-sans);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
     }
-    .intake-left-trust { display: flex; flex-direction: column; gap: 16px; }
+    .intake-left-sub {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      max-width: 360px;
+      margin-bottom: 36px;
+    }
+    .intake-left-trust { display: flex; flex-direction: column; gap: 12px; }
     .intake-trust-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-family: var(--font-display);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.4);
+      gap: 12px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
     }
-    .intake-trust-item::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--color-accent); flex-shrink:0; }
+    .intake-trust-item::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+    }
     .intake-right {
-      padding: 80px 60px;
+      padding: 64px 56px;
       display: flex;
       align-items: flex-start;
       justify-content: center;
     }
-    .intake-card { width: 100%; max-width: 480px; }
+    .intake-card { width: 100%; max-width: 520px; }
     .intake-progress {
       display: flex;
       gap: 6px;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
     .intake-progress-seg {
-      height: 2px;
+      height: 3px;
       flex: 1;
       background: var(--color-border);
-      transition: background 0.4s ease;
-      position: relative;
-      overflow: hidden;
+      border-radius: 2px;
+      transition: background 0.25s ease;
     }
     .intake-progress-seg.active { background: var(--color-accent); }
-    .intake-step { display: none; animation: fadeInUp 0.4s ease; }
-    .intake-step.active { display: block; }
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .intake-step { display: none; }
+    .intake-step.active { display: block; animation: fadeInUp 0.3s ease; }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
     .intake-step-title {
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 300;
-      font-style: italic;
+      font-family: var(--font-sans);
+      font-size: 28px;
+      font-weight: 700;
       color: var(--color-primary);
       margin-bottom: 8px;
-      line-height: 1.1;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
     .intake-step-sub {
-      font-family: var(--font-body);
-      font-size: 14px;
+      font-family: var(--font-sans);
+      font-size: 15px;
       color: var(--color-text-muted);
-      font-style: italic;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
       line-height: 1.6;
     }
-    /* Inquiry type cards */
-    .inquiry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+    .inquiry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
     .inquiry-opt { position: relative; }
     .inquiry-opt input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
     .inquiry-opt label {
       display: block;
-      padding: 20px 20px 16px;
+      padding: 16px 18px;
       border: 1px solid var(--color-border);
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.25s ease;
-      background: var(--color-bg);
+      transition: border-color 0.2s ease, background 0.2s ease;
+      background: var(--color-surface);
     }
     .inquiry-opt-title {
-      font-family: var(--font-heading);
-      font-size: 14px;
-      font-weight: 700;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
       color: var(--color-primary);
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+      letter-spacing: -0.01em;
     }
     .inquiry-opt-desc {
-      font-family: var(--font-body);
-      font-size: 12px;
+      font-family: var(--font-sans);
+      font-size: 13px;
       color: var(--color-text-muted);
-      font-style: italic;
       display: block;
     }
     .inquiry-opt input:checked + label {
       border-color: var(--color-accent);
-      background: var(--color-surface);
+      background: var(--color-surface-alt);
     }
     .inquiry-opt input:checked + label .inquiry-opt-title { color: var(--color-accent); }
-    /* Branch label */
     .branch-label {
-      font-family: var(--font-display);
-      font-size: 9px;
-      letter-spacing: 0.25em;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--color-accent);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: block;
     }
-    /* Radio group */
-    .radio-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .radio-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
     .radio-opt { position: relative; }
-    .radio-opt input { position:absolute; opacity:0; width:0; height:0; }
+    .radio-opt input { position: absolute; opacity: 0; width: 0; height: 0; }
     .radio-opt label {
       display: block;
-      padding: 10px 18px;
+      padding: 9px 16px;
       border: 1px solid var(--color-border);
-      font-family: var(--font-display);
-      font-size: 11px;
-      letter-spacing: 0.1em;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
       color: var(--color-text-muted);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      background: var(--color-surface);
     }
-    .radio-opt input:checked + label { border-color: var(--color-primary); color: var(--color-primary); background: var(--color-surface); }
-    /* Checkbox group */
-    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    .radio-opt input:checked + label {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-surface-alt);
+    }
+    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
     .check-opt { position: relative; display: flex; }
-    .check-opt input { position:absolute; opacity:0; width:0; height:0; }
+    .check-opt input { position: absolute; opacity: 0; width: 0; height: 0; }
     .check-opt label {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 14px;
+      padding: 10px 14px;
       border: 1px solid var(--color-border);
-      font-family: var(--font-body);
-      font-size: 13px;
-      color: var(--color-text-muted);
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--color-text);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: border-color 0.2s ease, background 0.2s ease;
       width: 100%;
+      background: var(--color-surface);
     }
-    .check-opt label::before { content:''; width:14px; height:14px; border:1px solid var(--color-border); flex-shrink:0; transition:all 0.2s ease; }
-    .check-opt input:checked + label { border-color: var(--color-primary); color: var(--color-primary); }
-    .check-opt input:checked + label::before { background: var(--color-primary); border-color: var(--color-primary); }
-    /* Form navigation */
-    .intake-nav-btns { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--color-border); }
-    /* Success screen */
-    .success-screen {
-      display: none;
-      text-align: center;
-      padding: 60px 20px;
+    .check-opt label::before {
+      content: '';
+      width: 16px; height: 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 3px;
+      flex-shrink: 0;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
-    .success-screen-icon { width: 48px; height: 48px; margin: 0 auto 32px; stroke: var(--color-accent); fill: none; stroke-width: 1.5; }
-    .success-screen-title { font-family: var(--font-display); font-size: 48px; font-weight: 300; font-style: italic; color: var(--color-primary); margin-bottom: 16px; }
-    .success-screen-sub { font-family: var(--font-body); font-size: 16px; color: var(--color-text-muted); font-style: italic; line-height: 1.6; margin-bottom: 32px; }
-    @media(max-width:960px) {
+    .check-opt input:checked + label {
+      border-color: var(--color-primary);
+      background: var(--color-surface-alt);
+    }
+    .check-opt input:checked + label::before {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+    .intake-nav-btns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+    }
+    .success-screen { display: none; text-align: center; padding: 56px 24px; }
+    .success-screen.is-visible { display: block; animation: fadeInUp 0.4s ease; }
+    .success-screen-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 24px;
+      stroke: var(--color-accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .success-screen-title {
+      font-family: var(--font-sans);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .success-screen-sub {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 960px) {
       .intake-wrap { grid-template-columns: 1fr; }
-      .intake-left { display:none; }
-      .intake-right { padding: 100px 32px 60px; }
+      .intake-left {
+        position: static;
+        height: auto;
+        padding: 56px 24px 40px;
+      }
+      .intake-right { padding: 48px 24px 64px; }
       .inquiry-grid { grid-template-columns: 1fr; }
       .checkbox-group { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
+
+  <a href="#main" class="visually-hidden" style="position:absolute;left:-9999px;" onfocus="this.style.cssText='position:fixed;left:16px;top:16px;background:#0F172A;color:#fff;padding:12px 18px;border-radius:6px;z-index:1000;'">Skip to content</a>
 
   <!-- WhatsApp FAB -->
   <a href="https://wa.me/17786888480" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -223,399 +270,399 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="selling.html">Selling</a></li>
       <li><a href="buying.html">Buying</a></li>
+      <li><a href="intake.html?type=valuation">Valuation</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#testimonials">Testimonials</a></li>
     </ul>
-    <a href="intake.html" class="nav-cta">Get Started</a>
+    <a href="intake.html" class="nav-cta">Book a call</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="intake-wrap">
-    <!-- Left panel (decorative) -->
-    <div class="intake-left">
-      <div>
-        <p class="intake-left-eyebrow">Confidential Consultation</p>
-        <h1 class="intake-left-title">Tell us about your situation.</h1>
-        <p class="intake-left-sub">Every inquiry is treated with complete discretion. Ruchika will review your submission personally and respond within 24 hours.</p>
-        <div class="intake-left-trust">
-          <div class="intake-trust-item">14 years of practice in BC</div>
-          <div class="intake-trust-item">All submissions are confidential</div>
-          <div class="intake-trust-item">No obligation &mdash; ever</div>
-          <div class="intake-trust-item">Personal response within 24 hours</div>
+  <main id="main">
+    <div class="intake-wrap">
+      <!-- Left panel -->
+      <div class="intake-left">
+        <div>
+          <p class="intake-left-eyebrow">Confidential consultation</p>
+          <h1 class="intake-left-title">Tell me about your situation.</h1>
+          <p class="intake-left-sub">Every inquiry is treated with complete discretion. I review submissions personally and respond within 24 hours.</p>
+          <div class="intake-left-trust">
+            <div class="intake-trust-item">Fourteen years of practice in BC</div>
+            <div class="intake-trust-item">All submissions confidential</div>
+            <div class="intake-trust-item">No obligation, ever</div>
+            <div class="intake-trust-item">Personal response within 24 hours</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right panel -->
+      <div class="intake-right">
+        <div class="intake-card">
+          <div class="intake-progress" id="progress-bar">
+            <div class="intake-progress-seg active" id="seg-1"></div>
+            <div class="intake-progress-seg" id="seg-2"></div>
+            <div class="intake-progress-seg" id="seg-3"></div>
+          </div>
+
+          <form id="intake-form" novalidate>
+            <input type="hidden" name="access_key" value="2588f677-ef54-4edd-a06d-4f690e4d3f6a">
+            <input type="hidden" name="subject" id="form-subject" value="New website inquiry · Ruchika Tekkeveetil">
+            <input type="hidden" name="from_name" id="form-from-name" value="">
+            <input type="hidden" name="botcheck" value="" style="display:none">
+
+            <!-- Step 1 -->
+            <div class="intake-step active" id="step-1">
+              <h2 class="intake-step-title">Let&rsquo;s talk.</h2>
+              <p class="intake-step-sub">All inquiries are handled with complete confidentiality.</p>
+
+              <div class="form-group">
+                <label for="name">Full name *</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone or WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (604) 000-0000">
+              </div>
+              <div class="form-group">
+                <label>What brings you here? *</label>
+                <div class="inquiry-grid">
+                  <div class="inquiry-opt">
+                    <input type="radio" name="inquiry_type" id="t-sell" value="Sell a business">
+                    <label for="t-sell">
+                      <span class="inquiry-opt-title">Sell a business</span>
+                      <span class="inquiry-opt-desc">Exit planning, buyer search</span>
+                    </label>
+                  </div>
+                  <div class="inquiry-opt">
+                    <input type="radio" name="inquiry_type" id="t-buy" value="Buy a business">
+                    <label for="t-buy">
+                      <span class="inquiry-opt-title">Buy a business</span>
+                      <span class="inquiry-opt-desc">Find the right opportunity</span>
+                    </label>
+                  </div>
+                  <div class="inquiry-opt">
+                    <input type="radio" name="inquiry_type" id="t-re" value="Commercial real estate">
+                    <label for="t-re">
+                      <span class="inquiry-opt-title">Commercial real estate</span>
+                      <span class="inquiry-opt-desc">Buildings, leases, land</span>
+                    </label>
+                  </div>
+                  <div class="inquiry-opt">
+                    <input type="radio" name="inquiry_type" id="t-val" value="Business valuation">
+                    <label for="t-val">
+                      <span class="inquiry-opt-title">Business valuation</span>
+                      <span class="inquiry-opt-desc">Know what you&rsquo;ve built</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="intake-nav-btns">
+                <span></span>
+                <button type="button" class="btn-primary" id="next-1">Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2A — Selling -->
+            <div class="intake-step" id="step-2a">
+              <span class="branch-label">Sell a business</span>
+              <h2 class="intake-step-title">About your business.</h2>
+              <p class="intake-step-sub">The more context you share, the better prepared I am for our first conversation.</p>
+
+              <div class="form-group">
+                <label for="sell-industry">Industry or sector</label>
+                <input type="text" id="sell-industry" name="sell_industry" placeholder="e.g. Healthcare, construction services, logistics">
+              </div>
+              <div class="form-group">
+                <label for="sell-revenue">Annual revenue (approximate)</label>
+                <select id="sell-revenue" name="sell_revenue">
+                  <option value="">Select range</option>
+                  <option>Under $1M</option>
+                  <option>$1M to $5M</option>
+                  <option>$5M to $15M</option>
+                  <option>$15M to $25M</option>
+                  <option>Over $25M</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Is the business profitable?</label>
+                <div class="radio-group">
+                  <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-yes" value="Yes"><label for="sp-yes">Yes</label></div>
+                  <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-no" value="No"><label for="sp-no">No</label></div>
+                  <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-be" value="Breaking even"><label for="sp-be">Breaking even</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sell-years">Years in operation</label>
+                <select id="sell-years" name="sell_years">
+                  <option value="">Select</option>
+                  <option>Less than 3 years</option>
+                  <option>3 to 5 years</option>
+                  <option>5 to 10 years</option>
+                  <option>10 or more years</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sell-reason">Reason for selling</label>
+                <select id="sell-reason" name="sell_reason">
+                  <option value="">Select</option>
+                  <option>Retirement</option>
+                  <option>New venture</option>
+                  <option>Partnership change</option>
+                  <option>Health reasons</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sell-timeline">Timeline</label>
+                <select id="sell-timeline" name="sell_timeline">
+                  <option value="">Select</option>
+                  <option>3 to 6 months</option>
+                  <option>6 to 12 months</option>
+                  <option>12 or more months</option>
+                  <option>Just exploring</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="sell-desc">Brief description</label>
+                <textarea id="sell-desc" name="sell_description" rows="3" placeholder="What does the business do? What makes it valuable?"></textarea>
+              </div>
+
+              <div class="intake-nav-btns">
+                <button type="button" class="btn-ghost" data-back>&larr; Back</button>
+                <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2B — Buying -->
+            <div class="intake-step" id="step-2b">
+              <span class="branch-label">Buy a business</span>
+              <h2 class="intake-step-title">Your acquisition criteria.</h2>
+              <p class="intake-step-sub">Tell me what you are looking for. The more specific, the better the search.</p>
+
+              <div class="form-group">
+                <label>Target sectors (select all that apply)</label>
+                <div class="checkbox-group">
+                  <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-health" value="Healthcare"><label for="bs-health">Healthcare</label></div>
+                  <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-log" value="Logistics"><label for="bs-log">Logistics</label></div>
+                  <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-trade" value="Trades / Construction"><label for="bs-trade">Trades / Construction</label></div>
+                  <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-mfg" value="Manufacturing"><label for="bs-mfg">Manufacturing</label></div>
+                  <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-hosp" value="Hospitality"><label for="bs-hosp">Hospitality</label></div>
+                  <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-open" value="Open to all"><label for="bs-open">Open to all</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="buy-revenue">Target revenue range</label>
+                <select id="buy-revenue" name="buy_revenue">
+                  <option value="">Select</option>
+                  <option>Under $1M</option>
+                  <option>$1M to $5M</option>
+                  <option>$5M to $15M</option>
+                  <option>$15M to $25M</option>
+                  <option>Over $25M</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Financing in place?</label>
+                <div class="radio-group">
+                  <div class="radio-opt"><input type="radio" name="buy_financing" id="bf-yes" value="Yes, fully"><label for="bf-yes">Yes, fully</label></div>
+                  <div class="radio-opt"><input type="radio" name="buy_financing" id="bf-part" value="Partially"><label for="bf-part">Partially</label></div>
+                  <div class="radio-opt"><input type="radio" name="buy_financing" id="bf-no" value="Not yet"><label for="bf-no">Not yet</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="buy-geo">Geography preference</label>
+                <select id="buy-geo" name="buy_geography">
+                  <option value="">Select</option>
+                  <option>Lower Mainland</option>
+                  <option>Okanagan</option>
+                  <option>Vancouver Island</option>
+                  <option>BC, no preference</option>
+                  <option>Western Canada</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="buy-timeline">Timeline</label>
+                <select id="buy-timeline" name="buy_timeline">
+                  <option value="">Select</option>
+                  <option>Actively looking now</option>
+                  <option>3 to 6 months</option>
+                  <option>6 to 12 months</option>
+                  <option>12 or more months</option>
+                </select>
+              </div>
+
+              <div class="intake-nav-btns">
+                <button type="button" class="btn-ghost" data-back>&larr; Back</button>
+                <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2C — Real Estate -->
+            <div class="intake-step" id="step-2c">
+              <span class="branch-label">Commercial real estate</span>
+              <h2 class="intake-step-title">About your property.</h2>
+              <p class="intake-step-sub">Commercial, mixed-use, or development land. Start with the basics and we can talk through the rest.</p>
+
+              <div class="form-group">
+                <label>Are you buying or selling?</label>
+                <div class="radio-group">
+                  <div class="radio-opt"><input type="radio" name="re_direction" id="re-buy" value="Buying"><label for="re-buy">Buying</label></div>
+                  <div class="radio-opt"><input type="radio" name="re_direction" id="re-sell" value="Selling"><label for="re-sell">Selling</label></div>
+                  <div class="radio-opt"><input type="radio" name="re_direction" id="re-both" value="Both"><label for="re-both">Both</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Property type</label>
+                <div class="radio-group">
+                  <div class="radio-opt"><input type="radio" name="re_type" id="rt-com" value="Commercial"><label for="rt-com">Commercial</label></div>
+                  <div class="radio-opt"><input type="radio" name="re_type" id="rt-mix" value="Mixed-use"><label for="rt-mix">Mixed-use</label></div>
+                  <div class="radio-opt"><input type="radio" name="re_type" id="rt-dev" value="Development land"><label for="rt-dev">Development land</label></div>
+                  <div class="radio-opt"><input type="radio" name="re_type" id="rt-mf" value="Multifamily"><label for="rt-mf">Multifamily</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="re-budget">Budget or estimated property value</label>
+                <input type="text" id="re-budget" name="re_budget" placeholder="e.g. $1.2M, $4.5M">
+              </div>
+              <div class="form-group">
+                <label for="re-location">Preferred location in BC</label>
+                <input type="text" id="re-location" name="re_location" placeholder="e.g. Greater Vancouver, Kelowna, Victoria">
+              </div>
+              <div class="form-group">
+                <label for="re-timeline">Timeline</label>
+                <select id="re-timeline" name="re_timeline">
+                  <option value="">Select</option>
+                  <option>ASAP</option>
+                  <option>1 to 3 months</option>
+                  <option>3 to 6 months</option>
+                  <option>6 to 12 months</option>
+                  <option>Just exploring</option>
+                </select>
+              </div>
+
+              <div class="intake-nav-btns">
+                <button type="button" class="btn-ghost" data-back>&larr; Back</button>
+                <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 2D — Valuation -->
+            <div class="intake-step" id="step-2d">
+              <span class="branch-label">Business valuation</span>
+              <h2 class="intake-step-title">About your business.</h2>
+              <p class="intake-step-sub">A valuation starts with understanding what you have built and why you need to know what it is worth.</p>
+
+              <div class="form-group">
+                <label for="val-industry">Industry or sector</label>
+                <input type="text" id="val-industry" name="val_industry" placeholder="e.g. Healthcare services, logistics">
+              </div>
+              <div class="form-group">
+                <label for="val-revenue">Annual revenue (approximate)</label>
+                <select id="val-revenue" name="val_revenue">
+                  <option value="">Select range</option>
+                  <option>Under $1M</option>
+                  <option>$1M to $5M</option>
+                  <option>$5M to $15M</option>
+                  <option>$15M to $25M</option>
+                  <option>Over $25M</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="val-reason">Reason for valuation</label>
+                <select id="val-reason" name="val_reason">
+                  <option value="">Select</option>
+                  <option>Sale preparation</option>
+                  <option>Financing or bank requirement</option>
+                  <option>Partnership dispute</option>
+                  <option>Estate planning</option>
+                  <option>Strategic clarity</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="val-timeline">Timeline</label>
+                <select id="val-timeline" name="val_timeline">
+                  <option value="">Select</option>
+                  <option>Urgent (within 4 weeks)</option>
+                  <option>1 to 3 months</option>
+                  <option>3 to 6 months</option>
+                  <option>No rush</option>
+                </select>
+              </div>
+
+              <div class="intake-nav-btns">
+                <button type="button" class="btn-ghost" data-back>&larr; Back</button>
+                <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="intake-step" id="step-3">
+              <h2 class="intake-step-title">Almost done.</h2>
+              <p class="intake-step-sub">Just a couple more things to help me prepare for our conversation.</p>
+
+              <div class="form-group">
+                <label for="referral">How did you hear about me?</label>
+                <select id="referral" name="referral">
+                  <option value="">Select</option>
+                  <option>Google search</option>
+                  <option>Referral / word of mouth</option>
+                  <option>LinkedIn</option>
+                  <option>Social media</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Preferred contact method</label>
+                <div class="radio-group">
+                  <div class="radio-opt"><input type="radio" name="contact_method" id="cm-email" value="Email"><label for="cm-email">Email</label></div>
+                  <div class="radio-opt"><input type="radio" name="contact_method" id="cm-wa" value="WhatsApp"><label for="cm-wa">WhatsApp</label></div>
+                  <div class="radio-opt"><input type="radio" name="contact_method" id="cm-phone" value="Phone call"><label for="cm-phone">Phone call</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="extra">Anything else I should know?</label>
+                <textarea id="extra" name="extra_notes" rows="4" placeholder="Optional. Any context that would help prepare for our conversation."></textarea>
+              </div>
+
+              <div class="intake-nav-btns">
+                <button type="button" class="btn-ghost" data-back>&larr; Back</button>
+                <button type="submit" class="btn-primary" id="submit-btn">Send inquiry &rarr;</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="success-screen" id="success-screen">
+            <svg class="success-screen-icon" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h2 class="success-screen-title">Thank you.</h2>
+            <p class="success-screen-sub">Your inquiry has been received. I&rsquo;ll be in touch within 24 hours.</p>
+            <a href="index.html" class="btn-outline">Back to home</a>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Right panel (form) -->
-    <div class="intake-right">
-      <div class="intake-card">
-        <!-- Progress -->
-        <div class="intake-progress" id="progress-bar">
-          <div class="intake-progress-seg active" id="seg-1"></div>
-          <div class="intake-progress-seg" id="seg-2"></div>
-          <div class="intake-progress-seg" id="seg-3"></div>
-        </div>
-
-        <form id="intake-form" novalidate>
-          <!-- Hidden Web3Forms fields -->
-          <input type="hidden" name="access_key" value="2588f677-ef54-4edd-a06d-4f690e4d3f6a">
-          <input type="hidden" name="subject" id="form-subject" value="New Website Inquiry — Ruchika Tekkeveetil">
-          <input type="hidden" name="from_name" id="form-from-name" value="">
-          <input type="hidden" name="botcheck" value="" style="display:none">
-
-          <!-- ── STEP 1 ── -->
-          <div class="intake-step active" id="step-1">
-            <h2 class="intake-step-title">Let's talk.</h2>
-            <p class="intake-step-sub">All inquiries are handled with complete confidentiality.</p>
-
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone / WhatsApp</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 (604) 000-0000">
-            </div>
-            <div class="form-group">
-              <label>What brings you here? *</label>
-              <div class="inquiry-grid">
-                <div class="inquiry-opt">
-                  <input type="radio" name="inquiry_type" id="t-sell" value="Sell a Business">
-                  <label for="t-sell">
-                    <span class="inquiry-opt-title">Sell a Business</span>
-                    <span class="inquiry-opt-desc">Exit planning &amp; buyer search</span>
-                  </label>
-                </div>
-                <div class="inquiry-opt">
-                  <input type="radio" name="inquiry_type" id="t-buy" value="Acquire a Business">
-                  <label for="t-buy">
-                    <span class="inquiry-opt-title">Acquire a Business</span>
-                    <span class="inquiry-opt-desc">Find &amp; close the right deal</span>
-                  </label>
-                </div>
-                <div class="inquiry-opt">
-                  <input type="radio" name="inquiry_type" id="t-re" value="Real Estate">
-                  <label for="t-re">
-                    <span class="inquiry-opt-title">Real Estate</span>
-                    <span class="inquiry-opt-desc">Residential or commercial</span>
-                  </label>
-                </div>
-                <div class="inquiry-opt">
-                  <input type="radio" name="inquiry_type" id="t-val" value="Business Valuation">
-                  <label for="t-val">
-                    <span class="inquiry-opt-title">Business Valuation</span>
-                    <span class="inquiry-opt-desc">Know what you&rsquo;ve built</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div class="intake-nav-btns">
-              <span></span>
-              <button type="button" class="btn-primary" id="next-1">Continue &rarr;</button>
-            </div>
-          </div>
-
-          <!-- ── STEP 2A — SELLING ── -->
-          <div class="intake-step" id="step-2a">
-            <span class="branch-label">Sell a Business</span>
-            <h2 class="intake-step-title">About your business.</h2>
-            <p class="intake-step-sub">The more context you share, the better we can prepare for our conversation.</p>
-
-            <div class="form-group">
-              <label for="sell-industry">Industry / Sector</label>
-              <input type="text" id="sell-industry" name="sell_industry" placeholder="e.g. Healthcare technology, Construction services">
-            </div>
-            <div class="form-group">
-              <label for="sell-revenue">Annual Revenue (approx.)</label>
-              <select id="sell-revenue" name="sell_revenue">
-                <option value="">Select range</option>
-                <option>Under $1M</option>
-                <option>$1M &ndash; $5M</option>
-                <option>$5M &ndash; $15M</option>
-                <option>$15M &ndash; $60M</option>
-                <option>Over $60M</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Is the business profitable?</label>
-              <div class="radio-group">
-                <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-yes" value="Yes"><label for="sp-yes">Yes</label></div>
-                <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-no" value="No"><label for="sp-no">No</label></div>
-                <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-be" value="Breaking even"><label for="sp-be">Breaking even</label></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="sell-years">Years in operation</label>
-              <select id="sell-years" name="sell_years">
-                <option value="">Select</option>
-                <option>Less than 3 years</option>
-                <option>3&ndash;5 years</option>
-                <option>5&ndash;10 years</option>
-                <option>10+ years</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="sell-reason">Reason for selling</label>
-              <select id="sell-reason" name="sell_reason">
-                <option value="">Select</option>
-                <option>Retirement</option>
-                <option>New venture</option>
-                <option>Partnership change</option>
-                <option>Health reasons</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="sell-timeline">Timeline</label>
-              <select id="sell-timeline" name="sell_timeline">
-                <option value="">Select</option>
-                <option>3&ndash;6 months</option>
-                <option>6&ndash;12 months</option>
-                <option>12+ months</option>
-                <option>Just exploring</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="sell-desc">Brief description</label>
-              <textarea id="sell-desc" name="sell_description" rows="3" placeholder="What does the business do? What makes it valuable?"></textarea>
-            </div>
-
-            <div class="intake-nav-btns">
-              <button type="button" class="btn-ghost" data-back>&larr; Back</button>
-              <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
-            </div>
-          </div>
-
-          <!-- ── STEP 2B — BUYING ── -->
-          <div class="intake-step" id="step-2b">
-            <span class="branch-label">Acquire a Business</span>
-            <h2 class="intake-step-title">Your acquisition criteria.</h2>
-            <p class="intake-step-sub">Tell us what you're looking for. The more specific, the better we can help.</p>
-
-            <div class="form-group">
-              <label>Target sectors (select all that apply)</label>
-              <div class="checkbox-group">
-                <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-health" value="Healthcare"><label for="bs-health">Healthcare</label></div>
-                <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-log" value="Logistics"><label for="bs-log">Logistics</label></div>
-                <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-con" value="Construction"><label for="bs-con">Construction</label></div>
-                <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-en" value="Energy"><label for="bs-en">Energy</label></div>
-                <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-mfg" value="Manufacturing"><label for="bs-mfg">Manufacturing</label></div>
-                <div class="check-opt"><input type="checkbox" name="buy_sectors" id="bs-open" value="Open to all"><label for="bs-open">Open to all</label></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="buy-revenue">Target revenue range</label>
-              <select id="buy-revenue" name="buy_revenue">
-                <option value="">Select</option>
-                <option>Under $5M</option>
-                <option>$5M &ndash; $15M</option>
-                <option>$15M &ndash; $40M</option>
-                <option>$40M &ndash; $60M</option>
-                <option>Over $60M</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Financing in place?</label>
-              <div class="radio-group">
-                <div class="radio-opt"><input type="radio" name="buy_financing" id="bf-yes" value="Yes — fully"><label for="bf-yes">Yes &mdash; fully</label></div>
-                <div class="radio-opt"><input type="radio" name="buy_financing" id="bf-part" value="Partially"><label for="bf-part">Partially</label></div>
-                <div class="radio-opt"><input type="radio" name="buy_financing" id="bf-no" value="Not yet"><label for="bf-no">Not yet</label></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="buy-geo">Geography preference</label>
-              <select id="buy-geo" name="buy_geography">
-                <option value="">Select</option>
-                <option>BC only</option>
-                <option>Western Canada</option>
-                <option>Canada-wide</option>
-                <option>Canada + USA</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="buy-timeline">Timeline</label>
-              <select id="buy-timeline" name="buy_timeline">
-                <option value="">Select</option>
-                <option>Actively looking now</option>
-                <option>3&ndash;6 months</option>
-                <option>6&ndash;12 months</option>
-                <option>12+ months</option>
-              </select>
-            </div>
-
-            <div class="intake-nav-btns">
-              <button type="button" class="btn-ghost" data-back>&larr; Back</button>
-              <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
-            </div>
-          </div>
-
-          <!-- ── STEP 2C — REAL ESTATE ── -->
-          <div class="intake-step" id="step-2c">
-            <span class="branch-label">Real Estate</span>
-            <h2 class="intake-step-title">About your property.</h2>
-            <p class="intake-step-sub">Residential, commercial, or development land &mdash; let's start with the basics.</p>
-
-            <div class="form-group">
-              <label>Are you buying or selling?</label>
-              <div class="radio-group">
-                <div class="radio-opt"><input type="radio" name="re_direction" id="re-buy" value="Buying"><label for="re-buy">Buying</label></div>
-                <div class="radio-opt"><input type="radio" name="re_direction" id="re-sell" value="Selling"><label for="re-sell">Selling</label></div>
-                <div class="radio-opt"><input type="radio" name="re_direction" id="re-both" value="Both"><label for="re-both">Both</label></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Property type</label>
-              <div class="radio-group">
-                <div class="radio-opt"><input type="radio" name="re_type" id="rt-res" value="Residential"><label for="rt-res">Residential</label></div>
-                <div class="radio-opt"><input type="radio" name="re_type" id="rt-com" value="Commercial"><label for="rt-com">Commercial</label></div>
-                <div class="radio-opt"><input type="radio" name="re_type" id="rt-dev" value="Development Land"><label for="rt-dev">Development Land</label></div>
-                <div class="radio-opt"><input type="radio" name="re_type" id="rt-mf" value="Multifamily"><label for="rt-mf">Multifamily</label></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="re-budget">Budget / estimated property value</label>
-              <input type="text" id="re-budget" name="re_budget" placeholder="e.g. $800K, $2.5M">
-            </div>
-            <div class="form-group">
-              <label for="re-location">Preferred location in BC</label>
-              <input type="text" id="re-location" name="re_location" placeholder="e.g. Greater Vancouver, Kelowna, Victoria">
-            </div>
-            <div class="form-group">
-              <label for="re-timeline">Timeline</label>
-              <select id="re-timeline" name="re_timeline">
-                <option value="">Select</option>
-                <option>ASAP</option>
-                <option>1&ndash;3 months</option>
-                <option>3&ndash;6 months</option>
-                <option>6&ndash;12 months</option>
-                <option>Just exploring</option>
-              </select>
-            </div>
-
-            <div class="intake-nav-btns">
-              <button type="button" class="btn-ghost" data-back>&larr; Back</button>
-              <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
-            </div>
-          </div>
-
-          <!-- ── STEP 2D — VALUATION ── -->
-          <div class="intake-step" id="step-2d">
-            <span class="branch-label">Business Valuation</span>
-            <h2 class="intake-step-title">About your business.</h2>
-            <p class="intake-step-sub">A valuation starts with understanding what you've built and why you need to know what it's worth.</p>
-
-            <div class="form-group">
-              <label for="val-industry">Industry / Sector</label>
-              <input type="text" id="val-industry" name="val_industry" placeholder="e.g. Healthcare technology">
-            </div>
-            <div class="form-group">
-              <label for="val-revenue">Annual Revenue (approx.)</label>
-              <select id="val-revenue" name="val_revenue">
-                <option value="">Select range</option>
-                <option>Under $1M</option>
-                <option>$1M &ndash; $5M</option>
-                <option>$5M &ndash; $15M</option>
-                <option>$15M &ndash; $60M</option>
-                <option>Over $60M</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="val-reason">Reason for valuation</label>
-              <select id="val-reason" name="val_reason">
-                <option value="">Select</option>
-                <option>Sale preparation</option>
-                <option>Financing / bank requirement</option>
-                <option>Partnership dispute</option>
-                <option>Estate planning</option>
-                <option>Strategic curiosity</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="val-timeline">Timeline</label>
-              <select id="val-timeline" name="val_timeline">
-                <option value="">Select</option>
-                <option>Urgent (within 4 weeks)</option>
-                <option>1&ndash;3 months</option>
-                <option>3&ndash;6 months</option>
-                <option>No rush</option>
-              </select>
-            </div>
-
-            <div class="intake-nav-btns">
-              <button type="button" class="btn-ghost" data-back>&larr; Back</button>
-              <button type="button" class="btn-primary" data-next>Continue &rarr;</button>
-            </div>
-          </div>
-
-          <!-- ── STEP 3 — WRAP-UP ── -->
-          <div class="intake-step" id="step-3">
-            <h2 class="intake-step-title">Almost done.</h2>
-            <p class="intake-step-sub">Just a couple more things to help Ruchika prepare for your conversation.</p>
-
-            <div class="form-group">
-              <label for="referral">How did you hear about Ruchika?</label>
-              <select id="referral" name="referral">
-                <option value="">Select</option>
-                <option>Google Search</option>
-                <option>Referral / word of mouth</option>
-                <option>LinkedIn</option>
-                <option>Social media</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Preferred contact method</label>
-              <div class="radio-group">
-                <div class="radio-opt"><input type="radio" name="contact_method" id="cm-email" value="Email"><label for="cm-email">Email</label></div>
-                <div class="radio-opt"><input type="radio" name="contact_method" id="cm-wa" value="WhatsApp"><label for="cm-wa">WhatsApp</label></div>
-                <div class="radio-opt"><input type="radio" name="contact_method" id="cm-phone" value="Phone call"><label for="cm-phone">Phone call</label></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="extra">Anything else you'd like Ruchika to know?</label>
-              <textarea id="extra" name="extra_notes" rows="4" placeholder="Optional &mdash; any context that would help prepare for our conversation&hellip;"></textarea>
-            </div>
-
-            <div class="intake-nav-btns">
-              <button type="button" class="btn-ghost" data-back>&larr; Back</button>
-              <button type="submit" class="btn-primary" id="submit-btn">Send Inquiry &rarr;</button>
-            </div>
-          </div>
-        </form>
-
-        <!-- Success screen -->
-        <div class="success-screen" id="success-screen">
-          <svg class="success-screen-icon" viewBox="0 0 24 24">
-            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          <h2 class="success-screen-title">Thank you.</h2>
-          <p class="success-screen-sub">Your inquiry has been received.<br>Ruchika will be in touch within 24 hours.</p>
-          <a href="index.html" class="btn-outline">Back to Home</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
   <script>
-  /* ── Intake multi-step logic ── */
+  /* Intake multi-step logic */
   (function() {
     var form = document.getElementById('intake-form');
     if (!form) return;
 
     var branchMap = {
-      'Sell a Business':    'step-2a',
-      'Acquire a Business': 'step-2b',
-      'Real Estate':        'step-2c',
-      'Business Valuation': 'step-2d'
+      'Sell a business':         'step-2a',
+      'Buy a business':          'step-2b',
+      'Commercial real estate':  'step-2c',
+      'Business valuation':      'step-2d'
     };
     var currentStepId = 'step-1';
 
@@ -632,11 +679,10 @@
       currentStepId = id;
       var intakeRight = document.querySelector('.intake-right');
       if (intakeRight) {
-        window.scrollTo({ top: intakeRight.offsetTop - 100, behavior: 'smooth' });
+        window.scrollTo({ top: intakeRight.offsetTop - 80, behavior: 'smooth' });
       }
     }
 
-    // Step 1 → Step 2 (branch)
     document.getElementById('next-1').addEventListener('click', function() {
       var name = form.querySelector('[name="name"]').value.trim();
       var email = form.querySelector('[name="email"]').value.trim();
@@ -645,12 +691,11 @@
       if (!name) { form.querySelector('[name="name"]').focus(); return; }
       if (!email || !email.includes('@')) { form.querySelector('[name="email"]').focus(); return; }
       if (!type) { alert('Please select what brings you here.'); return; }
-      document.getElementById('form-subject').value = 'New Inquiry \u2014 ' + type + ' \u2014 ' + name;
+      document.getElementById('form-subject').value = 'New inquiry · ' + type + ' · ' + name;
       document.getElementById('form-from-name').value = name;
       showStep(branchMap[type]);
     });
 
-    // Back buttons
     document.querySelectorAll('[data-back]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         if (currentStepId.startsWith('step-2')) {
@@ -663,16 +708,14 @@
       });
     });
 
-    // Next from step 2 → step 3
     document.querySelectorAll('[data-next]').forEach(function(btn) {
       btn.addEventListener('click', function() { showStep('step-3'); });
     });
 
-    // Submit → Web3Forms
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       var submitBtn = document.getElementById('submit-btn');
-      submitBtn.textContent = 'Sending\u2026';
+      submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
       try {
         var res = await fetch('https://api.web3forms.com/submit', {
@@ -682,18 +725,17 @@
         var json = await res.json();
         if (json.success) {
           form.style.display = 'none';
-          document.getElementById('success-screen').style.display = 'block';
+          document.getElementById('success-screen').classList.add('is-visible');
         } else {
           throw new Error(json.message);
         }
       } catch(err) {
-        submitBtn.textContent = 'Send Inquiry \u2192';
+        submitBtn.textContent = 'Send inquiry →';
         submitBtn.disabled = false;
         alert('Something went wrong. Please try again or reach out via WhatsApp.');
       }
     });
 
-    // Pre-select inquiry type if URL param present
     var params = new URLSearchParams(window.location.search);
     var typeParam = params.get('type');
     if (typeParam) {
