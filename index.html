@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruchika Tekkeveetil — Business Broker &amp; Real Estate Advisor, BC</title>
-  <meta name="description" content="Ruchika Tekkeveetil helps BC business owners sell, acquire, and understand their businesses. Licensed realtor and business broker, British Columbia.">
+  <title>Ruchika Tekkeveetil — Business Broker &amp; Realtor, British Columbia</title>
+  <meta name="description" content="Ruchika Tekkeveetil helps BC business owners sell, buy, and value what they've built. Independent business broker and licensed realtor based in British Columbia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="cursor" id="cursor"></div>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
@@ -20,10 +18,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="selling.html">Selling</a></li>
       <li><a href="buying.html">Buying</a></li>
+      <li><a href="#services">Valuation</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
     </ul>
-    <a href="intake.html" class="nav-cta">Get Started</a>
+    <a href="intake.html" class="nav-cta">Book a call</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -31,31 +29,52 @@
 
   <!-- Hero -->
   <section class="hero" id="top">
-    <div class="hero-bg"></div>
-    <div class="hero-grain"></div>
-    <div class="hero-decoration" aria-hidden="true">
-      <div class="hero-decoration-inner">
-        <div class="hero-monogram">RT</div>
-      </div>
-    </div>
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Business Broker &middot; Licensed Realtor &middot; British Columbia</p>
-      <h1 class="hero-headline">
-        <span class="hero-line">Where Business</span>
-        <span class="hero-line"><em>Meets Its Next</em></span>
-        <span class="hero-line">Chapter.</span>
-      </h1>
-      <p class="hero-sub reveal" style="transition-delay:0.3s">
-        Boutique advisory for BC business owners ready to sell, acquire, or understand what they&rsquo;ve built.
-      </p>
-      <div class="hero-actions reveal" style="transition-delay:0.5s">
-        <a href="selling.html" class="btn-primary">Sell a Business</a>
-        <a href="buying.html" class="btn-ghost">Buy / Acquire &rarr;</a>
+      <div class="hero-text">
+        <p class="hero-eyebrow">Business Broker · Licensed Realtor · British Columbia</p>
+        <h1 class="hero-headline">Helping BC business owners sell, buy, and value what they&rsquo;ve built.</h1>
+        <p class="hero-sub">
+          Independent advisor working one-on-one with owners across the Lower Mainland, the Okanagan, and Vancouver Island. Direct involvement on every file &mdash; no associate hand-offs.
+        </p>
+        <div class="hero-actions">
+          <a href="intake.html" class="btn-primary">Book a free consultation</a>
+          <a href="#process" class="btn-outline">How I work</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="hero-meta-num">14+ yrs</div>
+            <div class="hero-meta-lbl">In BC markets</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-num">$60M+</div>
+            <div class="hero-meta-lbl">Facilitated</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-num">150+</div>
+            <div class="hero-meta-lbl">Clients served</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Photo of Ruchika</span>
+          <span style="opacity:0.6">(placeholder &mdash; replace with headshot)</span>
+        </div>
       </div>
     </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <div class="hero-scroll-line"></div>
-      Scroll
+  </section>
+
+  <!-- Trust Band -->
+  <section class="trust-band" aria-label="Credentials">
+    <div class="trust-band-inner">
+      <span class="trust-item">Licensed Realtor (RECBC / BCFSA)</span>
+      <span class="trust-item">Business Broker</span>
+      <span class="trust-item">BCREA Member</span>
+      <span class="trust-item">Confidential consultations</span>
+      <span class="trust-item">Based in British Columbia</span>
     </div>
   </section>
 
@@ -63,101 +82,70 @@
   <section class="section services-bg" id="services">
     <div class="section-inner">
       <div class="section-header reveal">
-        <p class="eyebrow">What I Do</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">Advisory Services</h2>
-        <p class="body-text muted-text" style="max-width:480px;margin-top:16px">Four disciplines, one trusted advisor. Deep BC network, boutique approach, maximum value.</p>
+        <p class="eyebrow">What I do</p>
+        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">Four ways I can help</h2>
+        <p class="body-text muted-text" style="max-width:560px;margin-top:14px">One trusted advisor across the moments that matter most: selling, buying, valuing, and the real estate that surrounds them.</p>
       </div>
-      <div class="services-grid section-enter">
-        <div class="service-card">
-          <div class="service-card-num">01</div>
-          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M8 40V20l16-12 16 12v20H8z"/><path d="M20 40V28h8v12"/><path d="M16 20h4m4 0h4"/>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M8 40V20l16-12 16 12v20H8z"/><path d="M20 40V28h8v12"/>
           </svg>
-          <h3 class="service-card-title">Sell a Business</h3>
-          <p class="service-card-desc">Exit on your terms. Confidential process, qualified buyers, and maximum value through strategic positioning and experienced negotiation.</p>
+          <h3 class="service-card-title">Sell a business</h3>
+          <p class="service-card-desc">Exit on your terms. Confidential process, qualified buyers, defensible valuation, and experienced negotiation from first call to close.</p>
           <a href="selling.html" class="service-card-link">Learn more &rarr;</a>
         </div>
-        <div class="service-card">
-          <div class="service-card-num">02</div>
-          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <div class="service-card reveal">
+          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <circle cx="24" cy="24" r="16"/><path d="M16 24h16M24 16v16"/>
           </svg>
-          <h3 class="service-card-title">Buy / Acquire</h3>
-          <p class="service-card-desc">Find the right business at the right price. From search criteria to due diligence to close, guided acquisition for first-time and experienced buyers.</p>
+          <h3 class="service-card-title">Buy a business</h3>
+          <p class="service-card-desc">Find the right business at the right price. Guided search, due diligence, financing introductions, and close support &mdash; for first-time and experienced buyers.</p>
           <a href="buying.html" class="service-card-link">Learn more &rarr;</a>
         </div>
-        <div class="service-card">
-          <div class="service-card-num">03</div>
-          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="6" y="28" width="12" height="12"/><rect x="18" y="20" width="12" height="20"/><rect x="30" y="12" width="12" height="28"/>
-          </svg>
-          <h3 class="service-card-title">Real Estate</h3>
-          <p class="service-card-desc">Commercial and residential across BC. Whether tied to a business sale or a standalone transaction, navigated with the same precision.</p>
-          <a href="intake.html?type=realestate" class="service-card-link">Get in touch &rarr;</a>
-        </div>
-        <div class="service-card">
-          <div class="service-card-num">04</div>
-          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <div class="service-card reveal">
+          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <path d="M12 36l8-12 8 6 8-16"/><circle cx="12" cy="36" r="2"/><circle cx="20" cy="24" r="2"/><circle cx="28" cy="30" r="2"/><circle cx="36" cy="14" r="2"/>
           </svg>
-          <h3 class="service-card-title">Business Valuation</h3>
+          <h3 class="service-card-title">Business valuation</h3>
           <p class="service-card-desc">Know what you&rsquo;ve built. Formal valuations for sale prep, financing, partnership disputes, estate planning, or strategic clarity.</p>
-          <a href="intake.html?type=valuation" class="service-card-link">Get in touch &rarr;</a>
+          <a href="intake.html?type=valuation" class="service-card-link">Request a valuation &rarr;</a>
+        </div>
+        <div class="service-card reveal">
+          <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="6" y="28" width="12" height="12"/><rect x="18" y="20" width="12" height="20"/><rect x="30" y="12" width="12" height="28"/>
+          </svg>
+          <h3 class="service-card-title">Commercial real estate</h3>
+          <p class="service-card-desc">Buildings, leases, and land tied to your business &mdash; or standalone transactions across BC. Navigated with the same precision as the business itself.</p>
+          <a href="intake.html?type=realestate" class="service-card-link">Get in touch &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
-  <section class="stats-band" id="stats">
-    <div class="stats-grid">
-      <div class="stat-block">
-        <div class="stat-val" data-counter data-target="14" data-suffix="+">0+</div>
-        <div class="stat-lbl">Years in BC Markets</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-val" data-counter data-target="60" data-prefix="$" data-suffix="M+">$0M+</div>
-        <div class="stat-lbl">Transactions Facilitated</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-val" data-counter data-target="150" data-suffix="+">0+</div>
-        <div class="stat-lbl">Clients Served</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat-val" data-counter data-target="2">0</div>
-        <div class="stat-lbl">Full Licences — Realty &amp; Brokerage</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section" id="about">
+  <!-- Why work with me -->
+  <section class="section why-bg">
     <div class="section-inner">
-      <div class="about-layout">
-        <div class="about-image-wrap reveal">
-          <div class="about-image-placeholder">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            Ruchika Tekkeveetil
-          </div>
-          <div class="about-image-accent"></div>
+      <div class="section-header reveal">
+        <p class="eyebrow">Why work with me</p>
+        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">A different kind of broker</h2>
+        <p class="body-text muted-text" style="max-width:560px;margin-top:14px">Most owners only sell a business once. Choosing the right advisor is the first &mdash; and most important &mdash; decision in the process.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-card-num">01</div>
+          <h3 class="why-card-title">Independent, not a volume shop</h3>
+          <p class="why-card-desc">No quotas, no rotating inventory, no transaction-of-the-month. I take on a small number of files at a time so each one gets full attention.</p>
         </div>
-        <div class="about-content">
-          <p class="eyebrow reveal">About Ruchika</p>
-          <h2 class="section-heading reveal" style="font-size:clamp(28px,3.5vw,44px)">Boutique Advisory.<br><em style="font-style:italic;color:var(--color-accent)">Measurable Results.</em></h2>
-          <p class="body-text reveal" style="margin-top:24px;transition-delay:0.1s">
-            Ruchika Tekkeveetil has spent over a decade building relationships at the intersection of business and real estate in British Columbia. Where large brokerages treat transactions as volume, Ruchika treats each engagement as the singular, high-stakes moment it is for the business owner.
-          </p>
-          <p class="body-text muted-text reveal" style="margin-top:16px;transition-delay:0.2s">
-            Her approach begins with listening &mdash; understanding what a business means to its owner, what a successful outcome truly looks like, and what timeline and terms make sense. Only then does the work begin.
-          </p>
-          <div class="credential-tags reveal" style="transition-delay:0.3s">
-            <span class="credential-tag">BCREA Member</span>
-            <span class="credential-tag">Licensed Realtor</span>
-            <span class="credential-tag">Business Broker</span>
-            <span class="credential-tag">BC Based</span>
-          </div>
+        <div class="why-card reveal">
+          <div class="why-card-num">02</div>
+          <h3 class="why-card-title">You work with me, not an associate</h3>
+          <p class="why-card-desc">From the first call through the final close, I am the person you&rsquo;re emailing, meeting, and negotiating with. No hand-offs to junior staff.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card-num">03</div>
+          <h3 class="why-card-title">Deep BC network</h3>
+          <p class="why-card-desc">Fourteen-plus years building relationships with buyers, lawyers, accountants, and lenders across the Lower Mainland, Okanagan, and Vancouver Island.</p>
         </div>
       </div>
     </div>
@@ -166,58 +154,178 @@
   <!-- Process -->
   <section class="section process-bg" id="process">
     <div class="section-inner">
-      <div class="section-header text-center reveal">
-        <p class="eyebrow">How It Works</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">The Process</h2>
-        <p class="body-text muted-text" style="max-width:480px;margin:16px auto 0">From first call to final close, a structured approach that protects your interests at every stage.</p>
+      <div class="section-header reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">A clear, four-step process</h2>
+        <p class="body-text muted-text" style="max-width:560px;margin-top:14px">From the first conversation to the final close, a structured approach that protects your interests at every stage.</p>
       </div>
-      <div class="process-steps section-enter" style="margin-top:64px">
-        <div class="process-step">
-          <div class="process-step-dot">01</div>
-          <h3 class="process-step-title">Free Consultation</h3>
-          <p class="process-step-desc">A confidential conversation to understand your goals, timeline, and whether we&rsquo;re the right fit.</p>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-step-num">Step 1</div>
+          <h3 class="process-step-title">Free consultation</h3>
+          <p class="process-step-desc">A confidential conversation to understand your goals, your timeline, and whether we&rsquo;re the right fit.</p>
         </div>
-        <div class="process-step">
-          <div class="process-step-dot">02</div>
-          <h3 class="process-step-title">Market Analysis</h3>
+        <div class="process-step reveal">
+          <div class="process-step-num">Step 2</div>
+          <h3 class="process-step-title">Market analysis</h3>
           <p class="process-step-desc">Comprehensive valuation, comparable analysis, and positioning strategy tailored to your situation.</p>
         </div>
-        <div class="process-step">
-          <div class="process-step-dot">03</div>
-          <h3 class="process-step-title">Active Negotiation</h3>
+        <div class="process-step reveal">
+          <div class="process-step-num">Step 3</div>
+          <h3 class="process-step-title">Active negotiation</h3>
           <p class="process-step-desc">Qualified buyer outreach, offer management, and experienced deal negotiation on your behalf.</p>
         </div>
-        <div class="process-step">
-          <div class="process-step-dot">04</div>
-          <h3 class="process-step-title">Close &amp; Transition</h3>
-          <p class="process-step-desc">Legal coordination, condition removal, and transition planning to ensure a confident handover.</p>
+        <div class="process-step reveal">
+          <div class="process-step-num">Step 4</div>
+          <h3 class="process-step-title">Close &amp; transition</h3>
+          <p class="process-step-desc">Legal coordination, condition removal, and a transition plan that protects you after the handover.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- About -->
+  <section class="section about-bg" id="about">
+    <div class="section-inner">
+      <div class="about-layout">
+        <div class="about-image-wrap reveal">
+          <div class="about-image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>Photo of Ruchika</span>
+            <span style="opacity:0.6">(placeholder)</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="eyebrow reveal">About Ruchika</p>
+          <h2 class="section-heading reveal">About Ruchika</h2>
+          <p class="body-text reveal">
+            Ruchika Tekkeveetil has spent over a decade at the intersection of business and real estate in British Columbia. She works with a small, focused roster of owners &mdash; sellers preparing for an exit, buyers searching for the right opportunity, and operators who need a defensible valuation of what they&rsquo;ve built.
+          </p>
+          <p class="body-text muted-text reveal" style="margin-top:14px">
+            Her approach starts with listening: understanding what a business means to its owner, what a successful outcome actually looks like, and what timeline and terms make sense. Only then does the work begin.
+          </p>
+          <div class="credential-tags reveal">
+            <span class="credential-tag">BCREA Member</span>
+            <span class="credential-tag">Licensed Realtor</span>
+            <span class="credential-tag">Business Broker</span>
+            <span class="credential-tag">Based in BC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-band" id="stats" aria-label="Practice numbers">
+    <div class="stats-grid">
+      <div class="stat-block">
+        <div class="stat-val">14+</div>
+        <div class="stat-lbl">Years in BC markets</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-val">$60M+</div>
+        <div class="stat-lbl">Transactions facilitated</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-val">150+</div>
+        <div class="stat-lbl">Clients served</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-val">2</div>
+        <div class="stat-lbl">Licences &mdash; realty &amp; brokerage</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Testimonials -->
-  <section class="section" id="testimonials">
+  <section class="section testimonials-bg" id="testimonials">
     <div class="section-inner">
       <div class="section-header reveal">
-        <p class="eyebrow">Client Stories</p>
-        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(28px,3.5vw,44px)">What Clients Say</h2>
+        <p class="eyebrow">Client stories</p>
+        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">What clients say</h2>
       </div>
-      <div class="testimonials-grid section-enter">
-        <div class="testimonial-card">
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
           <p class="testimonial-text">&ldquo;Ruchika understood what we needed before we did. She positioned our business in a way that attracted serious buyers quickly, and the process was remarkably smooth from start to close.&rdquo;</p>
-          <div class="testimonial-author">Michael &amp; Diane T.</div>
-          <div class="testimonial-role">Sold: Healthcare services business, Greater Vancouver</div>
+          <div>
+            <div class="testimonial-author">Michael &amp; Diane T.</div>
+            <div class="testimonial-role">Sold a healthcare services business, Greater Vancouver</div>
+          </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal">
           <p class="testimonial-text">&ldquo;We were first-time buyers with no idea where to start. Ruchika walked us through every step &mdash; found us a business we never would have found on our own and negotiated hard on our behalf.&rdquo;</p>
-          <div class="testimonial-author">Priya S.</div>
-          <div class="testimonial-role">Acquired: Logistics company, Lower Mainland</div>
+          <div>
+            <div class="testimonial-author">Priya S.</div>
+            <div class="testimonial-role">Acquired a logistics company, Lower Mainland</div>
+          </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card reveal">
           <p class="testimonial-text">&ldquo;The valuation Ruchika provided was thorough, defensible, and gave our board the clarity we needed. We&rsquo;ve since engaged her for the full transaction.&rdquo;</p>
-          <div class="testimonial-author">James W.</div>
-          <div class="testimonial-role">Valuation + Sale: Construction business, Kelowna</div>
+          <div>
+            <div class="testimonial-author">James W.</div>
+            <div class="testimonial-role">Valuation and sale of a construction business, Kelowna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-bg" id="faq">
+    <div class="section-inner">
+      <div class="section-header text-center reveal" style="margin-bottom:32px">
+        <p class="eyebrow">Frequently asked</p>
+        <h2 class="section-heading" style="margin-top:12px;font-size:clamp(26px,3vw,38px)">Common questions</h2>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How is your fee structured?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Most engagements are success-based: a commission on the agreed sale price, payable at close. Valuation-only work is a flat fee. We&rsquo;ll agree on terms in writing before any work begins.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How long does a typical business sale take?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Most BC sales close in six to twelve months from listing, depending on industry, deal size, and how well-prepared the business is at the start. Preparation is usually where time is gained or lost.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is the process confidential?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Buyers sign a non-disclosure agreement before receiving any identifying information. Staff, customers, and competitors don&rsquo;t learn about a sale until the right time &mdash; usually after close.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you handle the real estate too?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. As a licensed realtor and business broker, I handle the operating business and the real estate that often comes with it &mdash; commercial buildings, leases, and land &mdash; under one engagement.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What size of business do you work with?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Most clients are BC-based owner-operators with revenues from roughly $500K to $25M. Healthcare, professional services, manufacturing, logistics, trades, and hospitality are the most common.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -225,33 +333,34 @@
 
   <!-- CTA Band -->
   <section class="cta-band">
-    <h2 class="cta-band-headline reveal">Ready to Write the Next Chapter?</h2>
-    <p class="cta-band-sub reveal" style="transition-delay:0.15s">Tell Ruchika about your situation. The first conversation is always confidential and no-obligation.</p>
-    <a href="intake.html" class="btn-white">Start Your Intake</a>
+    <h2 class="cta-band-headline reveal">Let&rsquo;s talk about your business.</h2>
+    <p class="cta-band-sub reveal">A confidential, no-obligation conversation about where you are and what a good outcome could look like.</p>
+    <a href="intake.html" class="btn-white">Start the conversation</a>
   </section>
 
   <!-- Footer -->
-  <footer style="background:var(--color-surface);border-top:1px solid var(--color-border)">
+  <footer>
     <div class="footer">
       <div>
         <div class="footer-brand-name">Ruchika Tekkeveetil</div>
-        <div class="footer-brand-tagline">Business Broker &middot; Realtor &middot; British Columbia</div>
+        <div class="footer-brand-tagline">Business Broker · Licensed Realtor · British Columbia</div>
+        <div class="footer-brand-note">Brokerage affiliation and licence numbers to be confirmed and listed here in accordance with BCFSA and RECBC requirements.</div>
       </div>
       <div>
         <div class="footer-col-title">Services</div>
         <ul class="footer-links">
-          <li><a href="selling.html">Sell a Business</a></li>
-          <li><a href="buying.html">Buy / Acquire</a></li>
-          <li><a href="intake.html?type=realestate">Real Estate</a></li>
-          <li><a href="intake.html?type=valuation">Business Valuation</a></li>
+          <li><a href="selling.html">Sell a business</a></li>
+          <li><a href="buying.html">Buy a business</a></li>
+          <li><a href="intake.html?type=valuation">Business valuation</a></li>
+          <li><a href="intake.html?type=realestate">Commercial real estate</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
-          <li><a href="intake.html">Start a Conversation</a></li>
-          <li><a href="https://wa.me/17786888480" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="brand-guide.html">Brand Guide</a></li>
+          <li><a href="intake.html">Book a call</a></li>
+          <li><a href="https://wa.me/17786888480" target="_blank" rel="noopener">WhatsApp: +1 (778) 688-8480</a></li>
+          <li><a href="mailto:contact@ruchikatekkeveetil.ca">contact@ruchikatekkeveetil.ca</a></li>
         </ul>
       </div>
     </div>
