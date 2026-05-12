@@ -430,6 +430,30 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .text-center { text-align: center; }
 .section-header { margin-bottom: 48px; }
 
+/* ─── Brokerage Bar (compliance: brokerage ID on every page) ─── */
+.brokerage-bar {
+  padding: 78px 24px 14px;
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.brokerage-bar strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.brokerage-bar a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.brokerage-bar + .page-hero { padding-top: 48px; }
+@media (max-width: 768px) {
+  .brokerage-bar { padding: 72px 16px 12px; font-size: 12px; }
+}
+
 /* ─── Hero ───────────────────────────────────── */
 .hero {
   position: relative;
