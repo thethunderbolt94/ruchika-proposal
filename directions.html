@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two directions — Ruchika Tekkeveetil website</title>
+  <meta name="description" content="Two aesthetic directions for the Ruchika Tekkeveetil website. Pick the one that feels like your practice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { background: #FFFFFF; color: #0F172A; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+    /* ─── Top frame: tells Ruchika what she's looking at ─── */
+    .frame {
+      padding: 28px 32px;
+      border-bottom: 1px solid #E2E8F0;
+      font-family: 'Inter', system-ui, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 32px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .frame-title { font-size: 14px; font-weight: 600; color: #0F172A; letter-spacing: -0.01em; }
+    .frame-sub { font-size: 13px; color: #64748B; max-width: 640px; }
+    .frame-sub b { color: #0F172A; font-weight: 600; }
+
+    /* ─── Shared lane label that floats top-left of each direction ─── */
+    .lane-label {
+      position: absolute;
+      top: 24px;
+      left: 32px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+    .lane-note {
+      max-width: 720px;
+      margin: 28px auto 0;
+      padding: 0 32px 56px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #64748B;
+      letter-spacing: 0;
+    }
+    .lane-note b { color: #0F172A; font-weight: 500; }
+    .lane-note span { color: #94A3B8; }
+
+    /* ═══════════════════════════════════════════
+       DIRECTION A — Clean & Direct
+       ═══════════════════════════════════════════ */
+    .dir-a {
+      position: relative;
+      background: #FAFAF8;
+      padding: 88px 32px 96px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #0F172A;
+    }
+    .dir-a .lane-label { color: #1E3A5F; }
+    .dir-a-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .dir-a-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #1E3A5F;
+      margin-bottom: 18px;
+    }
+    .dir-a-h1 {
+      font-size: clamp(32px, 4.2vw, 54px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: #0F172A;
+      margin-bottom: 18px;
+    }
+    .dir-a-sub {
+      font-size: 17px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+    .dir-a-cta {
+      display: inline-block;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .dir-a-cta-ghost {
+      display: inline-block;
+      color: #0F172A;
+      padding: 12px 23px;
+      border: 1px solid #0F172A;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .dir-a-meta {
+      display: flex;
+      gap: 28px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid #E2E8F0;
+      flex-wrap: wrap;
+    }
+    .dir-a-meta-num { font-size: 20px; font-weight: 700; color: #0F172A; letter-spacing: -0.02em; }
+    .dir-a-meta-lbl { font-size: 12px; color: #64748B; margin-top: 2px; }
+    .dir-a-photo {
+      aspect-ratio: 4/5;
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #94A3B8;
+      font-size: 13px;
+    }
+    .dir-a-photo svg { width: 48px; height: 48px; opacity: 0.5; }
+
+    @media (max-width: 800px) {
+      .dir-a-inner { grid-template-columns: 1fr; gap: 36px; }
+      .dir-a { padding: 88px 24px 64px; }
+    }
+
+    /* ═══════════════════════════════════════════
+       DIRECTION B — Editorial Authority
+       ═══════════════════════════════════════════ */
+    .dir-b {
+      position: relative;
+      background: #F2EBE0;
+      color: #1A1612;
+      padding: 96px 32px 96px;
+      font-family: 'Spectral', Georgia, serif;
+      border-top: 1px solid #DCD3C5;
+    }
+    .dir-b .lane-label { color: #8C3A24; }
+    .dir-b-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      gap: 72px;
+      align-items: end;
+    }
+    .dir-b-text {
+      padding-bottom: 12px;
+    }
+    .dir-b-eyebrow {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6B5D4A;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .dir-b-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: #6B5D4A;
+    }
+    .dir-b-h1 {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: clamp(36px, 5.6vw, 76px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.018em;
+      color: #1A1612;
+      margin-bottom: 28px;
+    }
+    .dir-b-h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #8C3A24;
+    }
+    .dir-b-sub {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #4A3F32;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+    .dir-b-actions {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .dir-b-cta {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #F2EBE0;
+      background: #1A1612;
+      padding: 16px 26px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .dir-b-cta-ghost {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1A1612;
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #1A1612;
+    }
+    .dir-b-rule {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid #DCD3C5;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 0 56px;
+      max-width: 560px;
+    }
+    .dir-b-rule-num {
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: #1A1612;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .dir-b-rule-lbl {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6B5D4A;
+      margin-top: 8px;
+    }
+    .dir-b-photo {
+      position: relative;
+      aspect-ratio: 4/5;
+      background: #E8DECF;
+      border: 1px solid #DCD3C5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #8E7F6A;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .dir-b-photo svg { width: 40px; height: 40px; opacity: 0.5; }
+    .dir-b-photo-cap {
+      position: absolute;
+      bottom: -28px;
+      right: 0;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6B5D4A;
+    }
+
+    @media (max-width: 800px) {
+      .dir-b-inner { grid-template-columns: 1fr; gap: 56px; }
+      .dir-b { padding: 88px 24px 88px; }
+      .dir-b-photo-cap { position: static; margin-top: 12px; display: block; }
+    }
+
+    /* ─── Bottom frame ─── */
+    .closer {
+      padding: 48px 32px 64px;
+      border-top: 1px solid #E2E8F0;
+      font-family: 'Inter', system-ui, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .closer h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .closer p {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.65;
+      max-width: 620px;
+      margin-bottom: 8px;
+    }
+    .closer-meta {
+      margin-top: 28px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+    <div>
+      <div class="frame-title">Two directions for the website</div>
+    </div>
+    <div class="frame-sub">
+      Same words, same content, same Ruchika. Two different aesthetic lanes. Scroll through both. <b>Tell me which one feels like your practice.</b> I will build out the rest of the site in that direction.
+    </div>
+  </div>
+
+  <!-- ═══════ DIRECTION A ═══════ -->
+  <section class="dir-a">
+    <div class="lane-label">Direction A · Clean &amp; Direct</div>
+    <div class="dir-a-inner">
+      <div>
+        <div class="dir-a-eyebrow">Business Broker · Licensed Realtor · British Columbia</div>
+        <h1 class="dir-a-h1">Helping BC business owners sell, buy, and value what they&rsquo;ve built.</h1>
+        <p class="dir-a-sub">Independent advisor working one-on-one with owners across the Lower Mainland, the Okanagan, and Vancouver Island. Direct involvement on every file.</p>
+        <a href="#" class="dir-a-cta">Book a free consultation</a>
+        <a href="#" class="dir-a-cta-ghost">How I work</a>
+        <div class="dir-a-meta">
+          <div>
+            <div class="dir-a-meta-num">14+ yrs</div>
+            <div class="dir-a-meta-lbl">In BC markets</div>
+          </div>
+          <div>
+            <div class="dir-a-meta-num">$60M+</div>
+            <div class="dir-a-meta-lbl">Facilitated</div>
+          </div>
+          <div>
+            <div class="dir-a-meta-num">150+</div>
+            <div class="dir-a-meta-lbl">Clients served</div>
+          </div>
+        </div>
+      </div>
+      <div class="dir-a-photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo of Ruchika</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="lane-note">
+    <b>Direction A feels like:</b> a Stripe-adjacent advisory practice. Modern, clean, professional. Friendly to younger buyers and digitally-native sellers. Closest reference in your email: <b>Jason Roberson</b>. <span>What it loses: a sense of gravitas. A 65-year-old founder selling a 30-year-old business may read this as too startup-flavored.</span>
+  </p>
+
+  <!-- ═══════ DIRECTION B ═══════ -->
+  <section class="dir-b">
+    <div class="lane-label">Direction B · Editorial Authority</div>
+    <div class="dir-b-inner">
+      <div class="dir-b-text">
+        <div class="dir-b-eyebrow">Business broker · Licensed realtor · British Columbia</div>
+        <h1 class="dir-b-h1">Helping BC owners <em>sell, buy, and value</em> what they&rsquo;ve built.</h1>
+        <p class="dir-b-sub">An independent practice. One advisor, a small caseload, direct involvement from first call to final close. Lower Mainland, Okanagan, Vancouver Island.</p>
+        <div class="dir-b-actions">
+          <a href="#" class="dir-b-cta">Book a consultation</a>
+          <a href="#" class="dir-b-cta-ghost">How I work →</a>
+        </div>
+        <div class="dir-b-rule">
+          <div>
+            <div class="dir-b-rule-num">14<span style="font-size:0.7em">+</span></div>
+            <div class="dir-b-rule-lbl">Years</div>
+          </div>
+          <div>
+            <div class="dir-b-rule-num">$60M<span style="font-size:0.7em">+</span></div>
+            <div class="dir-b-rule-lbl">Facilitated</div>
+          </div>
+          <div>
+            <div class="dir-b-rule-num">150<span style="font-size:0.7em">+</span></div>
+            <div class="dir-b-rule-lbl">Clients</div>
+          </div>
+        </div>
+      </div>
+      <div class="dir-b-photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Portrait · Ruchika</span>
+        <div class="dir-b-photo-cap">Plate 01 · to be photographed</div>
+      </div>
+    </div>
+  </section>
+
+  <p class="lane-note">
+    <b>Direction B feels like:</b> a long-established practice with weight. Editorial, considered, quietly confident. Friendly to older sellers, accountants, lawyers, family-office referrers. Closest reference in your email: <b>PAFA</b> (Pennsylvania Academy of Fine Arts &mdash; institutional restraint, content-first). <span>What it loses: it&rsquo;s slower to read, and less &ldquo;modern&rdquo; to a 35-year-old buyer browsing on their phone.</span>
+  </p>
+
+  <!-- ═══════ CLOSER ═══════ -->
+  <div class="closer">
+    <h2>Which one is you?</h2>
+    <p>There is no wrong answer. The whole site will be built in whichever lane you pick. Same copy, same structure, but every detail will feel consistent with that one choice.</p>
+    <p>If neither lands, tell me what&rsquo;s off and I will draft a third.</p>
+    <div class="closer-meta">Reply with: &ldquo;A&rdquo; · &ldquo;B&rdquo; · or &ldquo;Neither, here&rsquo;s what I want&rdquo;</div>
+  </div>
+
+</body>
+</html>
