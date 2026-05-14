@@ -1,30 +1,33 @@
 /* ═══════════════════════════════════════════════════════
-   Ruchika Tekkeveetil — Business Broker & Realtor, BC
-   Shared Stylesheet (refactored toward Jason Roberson direction)
+   Selling A Business — Ruchika Tekkeveetil
+   Commercial REALTOR® · Lower Mainland, BC
+   Shared Stylesheet (Benjamin Hardman direction — ivory, photo-driven)
    ═══════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap');
 
 /* ─── Brand Tokens ─── */
 :root {
-  --brand-name: "Ruchika Tekkeveetil";
-  --brand-title: "Business Broker & Licensed Realtor";
-  --brand-location: "British Columbia, Canada";
+  --brand-name: "Selling A Business";
+  --brand-tagline: "Strategic advisory for buying and selling businesses in BC";
+  --brand-practitioner: "Ruchika Tekkeveetil";
+  --brand-role: "Founder · Commercial REALTOR®";
+  --brand-location: "Lower Mainland, British Columbia";
+  --brand-email: "ruchika@sellingabusiness.ca";
   --whatsapp-number: "17786888480";
 
-  /* Palette: off-white + slate + restrained BC deep blue */
-  --color-bg:           #FAFAF8;
-  --color-surface:      #FFFFFF;
-  --color-primary:      #0F172A;   /* slate-900 — body & headings */
-  --color-accent:       #1E3A5F;   /* BC deep blue — used sparingly */
-  --color-text:         #0F172A;
-  --color-text-muted:   #475569;   /* slate-600 */
-  --color-border:       #E2E8F0;   /* slate-200 */
-  --color-surface-alt:  #F1F5F9;   /* slate-100 — for trust band, etc. */
+  /* Palette: warm ivory + near-black + clay accent (no blue, no navy) */
+  --color-bg:           #FAF8F4;   /* warm ivory */
+  --color-surface:      #FFFFFC;   /* nearly white, warm */
+  --color-primary:      #1C1814;   /* near-black, warm-bias */
+  --color-accent:       #993822;   /* warm clay — used sparingly */
+  --color-text:         #1C1814;
+  --color-text-muted:   #5C544A;   /* warm gray */
+  --color-border:       #DDD6CB;   /* soft warm hairline */
+  --color-surface-alt:  #F1ECE4;   /* alt-ivory for section banding */
 
-  /* Typography */
-  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-serif:   'Source Serif 4', Georgia, serif;
+  /* Typography — single family commitment, Benjamin Hardman aesthetic */
+  --font-sans:    'Switzer', 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', system-ui, sans-serif;
   --font-display: var(--font-sans);
   --font-heading: var(--font-sans);
   --font-body:    var(--font-sans);
@@ -72,30 +75,55 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* ─── Navigation ─────────────────────────── */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 38px; left: 0; right: 0;
   z-index: 100;
-  padding: 20px 48px;
+  padding: 18px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: background 0.25s ease, padding 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   border-bottom: 1px solid transparent;
-  background: rgba(250, 250, 248, 0.85);
-  backdrop-filter: saturate(180%) blur(8px);
-  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  background: rgba(250, 248, 244, 0.88);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
 }
 .nav.scrolled {
-  background: rgba(250, 250, 248, 0.96);
-  padding: 14px 48px;
+  background: rgba(250, 248, 244, 0.96);
+  padding: 12px 32px;
   border-color: var(--color-border);
+}
+@media (max-width: 768px) {
+  .nav { top: 36px; padding: 14px 16px; }
+  .nav.scrolled { padding: 10px 16px; }
 }
 .nav-brand {
   font-family: var(--font-sans);
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
   white-space: nowrap;
+  line-height: 1;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav-brand-name {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.nav-brand-suffix {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1;
 }
 .nav-links {
   display: flex;
@@ -430,60 +458,72 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .text-center { text-align: center; }
 .section-header { margin-bottom: 48px; }
 
-/* ─── Brokerage Bar (compliance: brokerage ID on every page) ─── */
-.brokerage-bar {
-  padding: 78px 24px 14px;
+/* ─── Top contact bar (sits above main nav) ─── */
+.contact-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101;
+  height: 38px;
   background: var(--color-surface-alt);
   border-bottom: 1px solid var(--color-border);
-  text-align: center;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+  padding: 0 32px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  letter-spacing: 0;
 }
-.brokerage-bar strong {
+.contact-bar-tagline {
+  font-weight: 500;
   color: var(--color-primary);
-  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
-.brokerage-bar a {
-  color: var(--color-accent);
-  text-decoration: underline;
+.contact-bar-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
 }
-.brokerage-bar-logo {
-  height: 22px;
-  width: auto;
+.contact-bar-links a {
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+.contact-bar-links a:hover { color: var(--color-accent); }
+.contact-bar-links .sep {
+  width: 1px;
+  height: 12px;
+  background: var(--color-border);
   display: inline-block;
-  vertical-align: middle;
 }
-.brokerage-bar + .page-hero { padding-top: 48px; }
 @media (max-width: 768px) {
-  .brokerage-bar { padding: 72px 16px 12px; font-size: 12px; gap: 8px; }
-  .brokerage-bar-logo { height: 18px; }
+  .contact-bar { height: 36px; padding: 0 16px; font-size: 11px; gap: 8px; }
+  .contact-bar-tagline { display: none; }
+  .contact-bar-links { gap: 10px; }
+  .contact-bar-links .sep { display: none; }
 }
 
 /* Footer brokerage logo */
 .footer-brokerage-logo {
-  height: 36px;
+  height: 40px;
   width: auto;
   display: block;
-  margin-top: 14px;
+  margin-top: 16px;
   margin-bottom: 10px;
 }
 
 /* ─── Hero ───────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   overflow: hidden;
   background: var(--color-bg);
-  padding-top: 64px;
+  padding-top: 100px;
 }
 .hero-content {
   position: relative;
@@ -897,12 +937,20 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   flex-direction: column;
   gap: 18px;
 }
+.testimonial-stars {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+  line-height: 1;
+}
 .testimonial-text {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 16px;
-  font-style: italic;
+  font-weight: 400;
   color: var(--color-primary);
-  line-height: 1.65;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
 }
 .testimonial-author {
   font-family: var(--font-sans);
@@ -1020,7 +1068,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 .page-hero {
   position: relative;
-  padding: 120px 48px 72px;
+  padding: 144px 48px 72px;
   background: var(--color-primary);
   overflow: hidden;
 }
@@ -1053,7 +1101,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   line-height: 1.65;
   margin-bottom: 36px;
 }
-@media (max-width: 768px) { .page-hero { padding: 96px 24px 56px; } }
+@media (max-width: 768px) { .page-hero { padding: 120px 24px 56px; } }
 
 .process-list { display: flex; flex-direction: column; gap: 0; }
 .process-list-item {

@@ -86,7 +86,7 @@
           .map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`)
           .join('\n')
       );
-      window.location.href = `mailto:contact@ruchikatekkeveetil.ca?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:ruchika@sellingabusiness.ca?subject=${subject}&body=${body}`;
       form.reset();
       const msg = form.querySelector('.form-success');
       if (msg) { msg.style.display = 'block'; setTimeout(() => msg.style.display = 'none', 4000); }

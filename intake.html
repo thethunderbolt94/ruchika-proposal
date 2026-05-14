@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a call — Ruchika Tekkeveetil, BC Business Broker</title>
-  <meta name="description" content="Start a confidential conversation with Ruchika Tekkeveetil, BC business broker and licensed realtor. Every inquiry is reviewed personally.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <title>Start a confidential conversation — Selling A Business</title>
+  <meta name="description" content="Start a confidential conversation with Ruchika Tekkeveetil, Commercial REALTOR® at Selling A Business. Every inquiry is reviewed personally.">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="style.css">
   <style>
     .intake-wrap {
@@ -18,13 +16,13 @@
     .intake-left {
       background: var(--color-primary);
       color: #FFFFFF;
-      padding: 64px 56px;
+      padding: 144px 56px 64px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: sticky;
-      top: 72px;
-      height: calc(100vh - 72px);
+      top: 0;
+      min-height: 100vh;
     }
     .intake-left-eyebrow {
       font-family: var(--font-sans);
@@ -69,7 +67,7 @@
       flex-shrink: 0;
     }
     .intake-right {
-      padding: 64px 56px;
+      padding: 144px 56px 64px;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -263,39 +261,49 @@
     </svg>
   </a>
 
+  <!-- Top contact bar -->
+  <div class="contact-bar">
+    <div class="contact-bar-tagline">Strategic advisory for buying and selling businesses in BC</div>
+    <div class="contact-bar-links">
+      <a href="tel:+17786888480">+1 778 688 8480</a>
+      <span class="sep"></span>
+      <a href="https://wa.me/17786888480" target="_blank" rel="noopener">WhatsApp</a>
+      <span class="sep"></span>
+      <a href="mailto:ruchika@sellingabusiness.ca">ruchika@sellingabusiness.ca</a>
+    </div>
+  </div>
+
   <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="index.html" class="nav-brand">Ruchika Tekkeveetil</a>
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name">Selling A Business</span>
+      <span class="nav-brand-suffix">Ruchika Tekkeveetil · Commercial REALTOR®</span>
+    </a>
     <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
       <li><a href="selling.html">Selling</a></li>
       <li><a href="buying.html">Buying</a></li>
       <li><a href="intake.html?type=valuation">Valuation</a></li>
-      <li><a href="index.html#about">About</a></li>
     </ul>
-    <a href="intake.html" class="nav-cta">Book a call</a>
+    <a href="intake.html" class="nav-cta">Start a conversation</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <main id="main">
-    <!-- Brokerage identification (BCFSA / Realty Alliance compliance) -->
-    <div class="brokerage-bar">
-      <img src="assets/realty-alliance-logo.png" alt="Realty Alliance Inc." class="brokerage-bar-logo" onerror="this.style.display='none'">
-      <span>Licensed under <strong>Realty Alliance Inc. (聯合地產)</strong> · BCFSA-regulated real estate brokerage</span>
-    </div>
     <div class="intake-wrap">
       <!-- Left panel -->
       <div class="intake-left">
         <div>
           <p class="intake-left-eyebrow">Confidential consultation</p>
           <h1 class="intake-left-title">Tell me about your situation.</h1>
-          <p class="intake-left-sub">Every inquiry is treated with complete discretion. I review submissions personally and respond within 24 hours.</p>
+          <p class="intake-left-sub">Every inquiry is treated with complete discretion. I review submissions personally and respond within 24 to 48 hours.</p>
           <div class="intake-left-trust">
-            <div class="intake-trust-item">Licensed under Realty Alliance Inc. (聯合地產)</div>
-            <div class="intake-trust-item">All submissions confidential</div>
+            <div class="intake-trust-item">All submissions strictly confidential</div>
+            <div class="intake-trust-item">Reviewed personally by Ruchika</div>
             <div class="intake-trust-item">No obligation, ever</div>
-            <div class="intake-trust-item">Personal response within 24 hours</div>
+            <div class="intake-trust-item">Response within 24 to 48 hours</div>
           </div>
         </div>
       </div>
@@ -339,28 +347,24 @@
                     <input type="radio" name="inquiry_type" id="t-sell" value="Sell a business">
                     <label for="t-sell">
                       <span class="inquiry-opt-title">Sell a business</span>
-                      <span class="inquiry-opt-desc">Exit planning, buyer search</span>
                     </label>
                   </div>
                   <div class="inquiry-opt">
                     <input type="radio" name="inquiry_type" id="t-buy" value="Buy a business">
                     <label for="t-buy">
                       <span class="inquiry-opt-title">Buy a business</span>
-                      <span class="inquiry-opt-desc">Find the right opportunity</span>
                     </label>
                   </div>
                   <div class="inquiry-opt">
                     <input type="radio" name="inquiry_type" id="t-re" value="Commercial real estate">
                     <label for="t-re">
                       <span class="inquiry-opt-title">Commercial real estate</span>
-                      <span class="inquiry-opt-desc">Buildings, leases, land</span>
                     </label>
                   </div>
                   <div class="inquiry-opt">
                     <input type="radio" name="inquiry_type" id="t-val" value="Business valuation">
                     <label for="t-val">
                       <span class="inquiry-opt-title">Business valuation</span>
-                      <span class="inquiry-opt-desc">Know what you&rsquo;ve built</span>
                     </label>
                   </div>
                 </div>
@@ -394,14 +398,6 @@
                 </select>
               </div>
               <div class="form-group">
-                <label>Is the business profitable?</label>
-                <div class="radio-group">
-                  <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-yes" value="Yes"><label for="sp-yes">Yes</label></div>
-                  <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-no" value="No"><label for="sp-no">No</label></div>
-                  <div class="radio-opt"><input type="radio" name="sell_profitable" id="sp-be" value="Breaking even"><label for="sp-be">Breaking even</label></div>
-                </div>
-              </div>
-              <div class="form-group">
                 <label for="sell-years">Years in operation</label>
                 <select id="sell-years" name="sell_years">
                   <option value="">Select</option>
@@ -412,29 +408,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="sell-reason">Reason for selling</label>
-                <select id="sell-reason" name="sell_reason">
-                  <option value="">Select</option>
-                  <option>Retirement</option>
-                  <option>New venture</option>
-                  <option>Partnership change</option>
-                  <option>Health reasons</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="sell-timeline">Timeline</label>
-                <select id="sell-timeline" name="sell_timeline">
-                  <option value="">Select</option>
-                  <option>3 to 6 months</option>
-                  <option>6 to 12 months</option>
-                  <option>12 or more months</option>
-                  <option>Just exploring</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="sell-desc">Brief description</label>
-                <textarea id="sell-desc" name="sell_description" rows="3" placeholder="What does the business do? What makes it valuable?"></textarea>
+                <label for="sell-desc">Tell me more</label>
+                <textarea id="sell-desc" name="sell_description" rows="4" placeholder="Anything you'd like to share about your business or your situation."></textarea>
               </div>
 
               <div class="intake-nav-btns">
@@ -484,10 +459,7 @@
                 <select id="buy-geo" name="buy_geography">
                   <option value="">Select</option>
                   <option>Lower Mainland</option>
-                  <option>Okanagan</option>
-                  <option>Vancouver Island</option>
-                  <option>BC, no preference</option>
-                  <option>Western Canada</option>
+                  <option>Lower Mainland + adjacent BC</option>
                 </select>
               </div>
               <div class="form-group">
@@ -647,7 +619,7 @@
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
             <h2 class="success-screen-title">Thank you.</h2>
-            <p class="success-screen-sub">Your inquiry has been received. I&rsquo;ll be in touch within 24 hours.</p>
+            <p class="success-screen-sub">Your inquiry has been received. I&rsquo;ll be in touch within 24 to 48 hours.</p>
             <a href="index.html" class="btn-outline">Back to home</a>
           </div>
         </div>
