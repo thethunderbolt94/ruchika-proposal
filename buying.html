@@ -55,16 +55,27 @@
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 10px;
-      padding: 24px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+    }
+    .sector-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--color-surface-alt);
+      filter: saturate(0.9);
+    }
+    .sector-body {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
     }
     .sector-icon {
-      width: 28px;
-      height: 28px;
-      stroke: var(--color-accent);
-      flex-shrink: 0;
+      display: none;
     }
     .sector-name {
       font-family: var(--font-sans);
@@ -189,39 +200,39 @@
         </div>
         <div class="sectors-grid">
           <div class="sector-item">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M3 11h18l-1 9H4l-1-9zM6 11V7a3 3 0 013-3h6a3 3 0 013 3v4"/>
-            </svg>
-            <div class="sector-name">Food &amp; hospitality</div>
-            <div class="sector-detail">Restaurants, quick-service, and franchise businesses of all sizes.</div>
+            <div class="sector-image" style="background-image: url('https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="sector-body">
+              <div class="sector-name">Food &amp; hospitality</div>
+              <div class="sector-detail">Restaurants, quick-service, and franchise businesses of all sizes.</div>
+            </div>
           </div>
           <div class="sector-item">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M14 2h6v6"/><path d="M9 15l6-6M5 12h6v6"/>
-            </svg>
-            <div class="sector-name">Skilled trades</div>
-            <div class="sector-detail">HVAC, electrical, plumbing, and construction service businesses.</div>
+            <div class="sector-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="sector-body">
+              <div class="sector-name">Skilled trades</div>
+              <div class="sector-detail">HVAC, electrical, plumbing, and construction service businesses.</div>
+            </div>
           </div>
           <div class="sector-item">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
-            </svg>
-            <div class="sector-name">Manufacturing</div>
-            <div class="sector-detail">Small and mid-sized manufacturers across multiple product categories.</div>
+            <div class="sector-image" style="background-image: url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="sector-body">
+              <div class="sector-name">Manufacturing</div>
+              <div class="sector-detail">Small and mid-sized manufacturers across multiple product categories.</div>
+            </div>
           </div>
           <div class="sector-item">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
-            </svg>
-            <div class="sector-name">Service businesses</div>
-            <div class="sector-detail">Maintenance, specialty service firms, recurring-revenue businesses.</div>
+            <div class="sector-image" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="sector-body">
+              <div class="sector-name">Service businesses</div>
+              <div class="sector-detail">Maintenance, specialty service firms, recurring-revenue businesses.</div>
+            </div>
           </div>
           <div class="sector-item">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
-            </svg>
-            <div class="sector-name">And more</div>
-            <div class="sector-detail">Logistics, healthcare, retail, technology &mdash; reach out if your sector isn&rsquo;t listed.</div>
+            <div class="sector-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="sector-body">
+              <div class="sector-name">And more</div>
+              <div class="sector-detail">Logistics, healthcare, retail, technology &mdash; reach out if your sector isn&rsquo;t listed.</div>
+            </div>
           </div>
         </div>
       </div>
